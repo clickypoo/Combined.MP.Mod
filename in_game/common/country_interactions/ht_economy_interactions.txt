@@ -1,0 +1,249 @@
+﻿ht_add_gold = {
+	type = diplomacy
+	category = CATEGORY_HT_ACTIONS
+	ai_tick = never
+	use_enroute = no
+	block_when_at_war = no
+
+	potential = {
+		scope:actor = { cmf_can_use_unrestricted_tools = yes }
+	}
+
+	allow = { }
+
+	select_trigger = {
+		allow_self = yes
+		looking_for_a = country
+		target_flag = recipient
+		name = ht_select_target
+
+
+		show_if = {
+			NOT = { has_global_variable = ht_target_self }
+		}
+
+		column = { data = name }
+
+		visible = {
+			NOR = {
+				country_type = building
+				country_type = pop
+			}
+		}
+	}
+
+	effect = {
+		hidden_effect = {
+			if = {
+				limit = { has_global_variable = ht_target_self }
+				scope:actor = { save_scope_as = recipient }
+			}
+			if = {
+				limit = {
+					exists = scope:recipient
+				}
+				ht_add_gold_effect = yes
+			}
+		}
+	}
+}
+
+ht_add_manpower = {
+	type = diplomacy
+	category = CATEGORY_HT_ACTIONS
+	ai_tick = never
+	use_enroute = no
+	block_when_at_war = no
+
+	potential = {
+		scope:actor = { cmf_can_use_unrestricted_tools = yes }
+	}
+
+	allow = { }
+
+	select_trigger = {
+		allow_self = yes
+		looking_for_a = country
+		target_flag = recipient
+		name = ht_select_target
+
+
+		show_if = {
+			NOT = { has_global_variable = ht_target_self }
+		}
+
+		column = { data = name }
+
+		visible = {
+			NOR = {
+				country_type = building
+				country_type = pop
+			}
+		}
+	}
+
+	effect = {
+		hidden_effect = {
+			if = {
+				limit = { has_global_variable = ht_target_self }
+				scope:actor = { save_scope_as = recipient }
+			}
+			if = {
+				limit = {
+					exists = scope:recipient
+				}
+				ht_add_manpower_effect = yes
+			}
+		}
+	}
+}
+
+ht_add_stability = {
+	type = diplomacy
+	category = CATEGORY_HT_ACTIONS
+	ai_tick = never
+	use_enroute = no
+	block_when_at_war = no
+
+	potential = {
+		scope:actor = { cmf_can_use_unrestricted_tools = yes }
+	}
+
+	allow = { }
+
+	select_trigger = {
+		allow_self = yes
+		looking_for_a = country
+		target_flag = recipient
+		name = ht_select_target
+
+
+		show_if = {
+			NOT = { has_global_variable = ht_target_self }
+		}
+
+		column = { data = name }
+
+		visible = {
+			NOR = {
+				country_type = building
+				country_type = pop
+			}
+		}
+	}
+
+	effect = {
+		hidden_effect = {
+			if = {
+				limit = { has_global_variable = ht_target_self }
+				scope:actor = { save_scope_as = recipient }
+			}
+			if = {
+				limit = {
+					exists = scope:recipient
+				}
+				ht_add_stability_effect = yes
+			}
+		}
+	}
+}
+
+ht_add_prestige = {
+	type = diplomacy
+	category = CATEGORY_HT_ACTIONS
+	ai_tick = never
+	use_enroute = no
+	block_when_at_war = no
+
+	potential = {
+		scope:actor = { cmf_can_use_unrestricted_tools = yes }
+	}
+
+	allow = { }
+
+	select_trigger = {
+		allow_self = yes
+		looking_for_a = country
+		target_flag = recipient
+		name = ht_select_target
+
+
+		show_if = {
+			NOT = { has_global_variable = ht_target_self }
+		}
+
+		column = { data = name }
+
+		visible = {
+			NOR = {
+				country_type = building
+				country_type = pop
+			}
+		}
+	}
+
+	effect = {
+		hidden_effect = {
+			if = {
+				limit = { has_global_variable = ht_target_self }
+				scope:actor = { save_scope_as = recipient }
+			}
+			if = {
+				limit = {
+					exists = scope:recipient
+				}
+				ht_add_prestige_effect = yes
+			}
+		}
+	}
+}
+
+ht_add_diplomats = {
+	type = diplomacy
+	category = CATEGORY_HT_ACTIONS
+	ai_tick = never
+	use_enroute = no
+	block_when_at_war = no
+
+	potential = {
+		scope:actor = { cmf_can_use_unrestricted_tools = yes }
+	}
+
+	allow = { }
+
+	select_trigger = {
+		allow_self = yes
+		looking_for_a = country
+		target_flag = recipient
+		name = ht_select_target
+
+
+		show_if = {
+			NOT = { has_global_variable = ht_target_self }
+		}
+
+		column = { data = name }
+
+		visible = {
+			NOR = {
+				country_type = building
+				country_type = pop
+			}
+		}
+	}
+
+	effect = {
+		hidden_effect = {
+			if = {
+				limit = { has_global_variable = ht_target_self }
+				scope:actor = { save_scope_as = recipient }
+			}
+			if = {
+				limit = {
+					exists = scope:recipient
+				}
+				ht_add_diplomats_effect = yes
+			}
+		}
+	}
+}

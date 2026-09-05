@@ -1,0 +1,21 @@
+﻿# Temporary workaround for the vanilla Platonic Revival multiplayer desync.
+
+# cmf_on_mod_registration fires at session start (new game + load) and yearly.
+cmf_on_mod_registration = {
+	on_actions = {
+		ht_temp_on_enforce_hellenism_desync_fix
+	}
+}
+
+# weather_monthly_pulse is the engine's once-a-month global pulse.
+weather_monthly_pulse = {
+	on_actions = {
+		ht_temp_on_enforce_hellenism_desync_fix
+	}
+}
+
+ht_temp_on_enforce_hellenism_desync_fix = {
+	effect = {
+		ht_temp_enforce_hellenism_desync_fix = yes
+	}
+}

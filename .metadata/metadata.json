@@ -1,0 +1,12 @@
+﻿{
+  "name" : "Lambert MP Minimal",
+  "id" : "Lambert.MP.Minimal",
+  "version" : "29.08.26",
+  "game_id" : "eu5",
+  "picture" : null,
+  "supported_game_version" : "1.3.*",
+  "short_description" : "If it doesn't work, blame Glorp!",
+  "tags" : [ ],
+  "relationships" : [ ],
+  "game_custom_data" : { }
+}

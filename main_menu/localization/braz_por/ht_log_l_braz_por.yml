@@ -1,0 +1,34 @@
+﻿l_braz_por:
+ # ── Economy Log Actions (single-target: [actor] [action] [target]) ───────────
+ ht_log_added_gold: "deu [CMMV('ht__gold_amount')] ouro a"
+ ht_log_added_manpower: "atribuiu [CMMV('ht__manpower_amount')] mão de obra a"
+ ht_log_added_stability: "atribuiu [CMMV('ht__stability_amount')] estabilidade a"
+ ht_log_added_prestige: "concedeu [CMMV('ht__prestige_amount')] de prestígio a"
+ ht_log_added_diplomats: "concedeu [CMMV('ht__diplomats_amount')] diplomatas a"
+
+ # ── Diplomacy Log Actions (two-target: [actor] [A] [action] [B]) ─────────────
+ ht_log_forced_alliance: "aliança forçada com"
+ ht_log_broke_alliance: "rompeu a aliança com"
+ ht_log_forced_guarantee: "garantia obrigatória sobre"
+ ht_log_broke_guarantee: "garantia revogada sobre"
+ ht_log_added_truce: "adicionada trégua de [CMMV('ht__truce_years')] anos com"
+ ht_log_removed_truce: "revogou a trégua com"
+ ht_log_added_rival: "igualado"
+ ht_log_removed_rival: "incomparável"
+
+ # ── War Log Actions (two-target) ─────────────────────────────────────────────
+ ht_log_declared_war: "declarou guerra a"
+ ht_log_white_peace: "paz branca"
+ ht_log_changed_war_exhaustion: "substituiu o valor de esgotamento de guerra por [CMMV('ht__war_exhaustion_amount')] para"
+
+ # ── Country Management Log Actions (mixed) ───────────────────────────────────
+ ht_log_annexed: "anexado"
+ ht_log_granted_independence: "concedeu a independência a"
+ ht_log_vassalized: "vassalizado"
+ ht_log_killed_ruler: "matou o governante de"
+ ht_log_ended_regency: "encerrou a regência de"
+ ht_log_changed_religion: "copiou a religião para"
+ ht_log_changed_culture: "cultura copiada para"
+ ht_log_changed_government: "copiou o governo para"
+ ht_log_converted_pops: "converteu [CMMV('ht__religion_conversion_percentage')]% da população em"
+ ht_log_assimilated_pops: "assimilou [CMMV('ht__culture_assimilation_percentage')]% da população em"

@@ -1,0 +1,21 @@
+﻿fum_can_remove_location = {
+	NOT = {
+		OR = {
+			region = region:caucasus_region
+			region = region:steppes_region
+			region = region:egypt_region
+		}
+	}
+}
+
+# Root scope: character. Returns yes if the character should not be culled.
+fum_is_protected_character = {
+	OR = {
+		is_adult = no
+		has_estate = estate_type:crown_estate
+		in_cabinet = yes
+		is_general = yes
+		is_admiral = yes
+		has_trait = architectural_visionary
+	}
+}

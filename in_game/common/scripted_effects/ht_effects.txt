@@ -1,0 +1,323 @@
+﻿# ── Economy Effects (single-target: applies to scope:recipient) ────────────────
+
+ht_add_gold_effect = {
+	scope:recipient = {
+		add_gold = "global_variable_map(cmm|flag:ht__gold_amount)"
+	}
+	scope:recipient = { save_scope_as = cmf_log_arg2 }
+	scope:actor = { cmf_log_with_scope_arg = { action = ht_log_added_gold } }
+}
+
+ht_add_manpower_effect = {
+	scope:recipient = {
+		add_manpower = "global_variable_map(cmm|flag:ht__manpower_amount)"
+	}
+	scope:recipient = { save_scope_as = cmf_log_arg2 }
+	scope:actor = { cmf_log_with_scope_arg = { action = ht_log_added_manpower } }
+}
+
+ht_add_stability_effect = {
+	scope:recipient = {
+		add_stability = "global_variable_map(cmm|flag:ht__stability_amount)"
+	}
+	scope:recipient = { save_scope_as = cmf_log_arg2 }
+	scope:actor = { cmf_log_with_scope_arg = { action = ht_log_added_stability } }
+}
+
+ht_add_prestige_effect = {
+	scope:recipient = {
+		add_prestige = "global_variable_map(cmm|flag:ht__prestige_amount)"
+	}
+	scope:recipient = { save_scope_as = cmf_log_arg2 }
+	scope:actor = { cmf_log_with_scope_arg = { action = ht_log_added_prestige } }
+}
+
+ht_add_diplomats_effect = {
+	scope:recipient = {
+		add_diplomats = "global_variable_map(cmm|flag:ht__diplomats_amount)"
+	}
+	scope:recipient = { save_scope_as = cmf_log_arg2 }
+	scope:actor = { cmf_log_with_scope_arg = { action = ht_log_added_diplomats } }
+}
+
+# ── Diplomacy Effects (two-target: recipient + target) ──────────────────────────
+
+ht_force_alliance_effect = {
+	create_relation = {
+		first = scope:recipient
+		second = scope:target
+		type = relation_type:alliance
+	}
+	scope:recipient = { save_scope_as = cmf_log_arg1 }
+	scope:target = { save_scope_as = cmf_log_arg2 }
+	scope:actor = { cmf_log_with_scope_args = { action = ht_log_forced_alliance } }
+}
+
+ht_break_alliance_effect = {
+	remove_relation = {
+		first = scope:recipient
+		second = scope:target
+		type = relation_type:alliance
+	}
+	scope:recipient = { save_scope_as = cmf_log_arg1 }
+	scope:target = { save_scope_as = cmf_log_arg2 }
+	scope:actor = { cmf_log_with_scope_args = { action = ht_log_broke_alliance } }
+}
+
+ht_force_guarantee_effect = {
+	create_relation = {
+		first = scope:recipient
+		second = scope:target
+		type = relation_type:guarantee
+	}
+	scope:recipient = { save_scope_as = cmf_log_arg1 }
+	scope:target = { save_scope_as = cmf_log_arg2 }
+	scope:actor = { cmf_log_with_scope_args = { action = ht_log_forced_guarantee } }
+}
+
+ht_break_guarantee_effect = {
+	remove_relation = {
+		first = scope:recipient
+		second = scope:target
+		type = relation_type:guarantee
+	}
+	scope:recipient = { save_scope_as = cmf_log_arg1 }
+	scope:target = { save_scope_as = cmf_log_arg2 }
+	scope:actor = { cmf_log_with_scope_args = { action = ht_log_broke_guarantee } }
+}
+
+ht_add_truce_effect = {
+	scope:recipient = {
+		add_truce_with = {
+			target = scope:target
+			years = "global_variable_map(cmm|flag:ht__truce_years)"
+			mutual = yes
+		}
+	}
+	scope:recipient = { save_scope_as = cmf_log_arg1 }
+	scope:target = { save_scope_as = cmf_log_arg2 }
+	scope:actor = { cmf_log_with_scope_args = { action = ht_log_added_truce } }
+}
+
+ht_remove_truce_effect = {
+	scope:recipient = {
+		remove_truce_with = scope:target
+	}
+	scope:recipient = { save_scope_as = cmf_log_arg1 }
+	scope:target = { save_scope_as = cmf_log_arg2 }
+	scope:actor = { cmf_log_with_scope_args = { action = ht_log_removed_truce } }
+}
+
+ht_add_rival_effect = {
+	scope:recipient = {
+		add_rival = scope:target
+	}
+	scope:recipient = { save_scope_as = cmf_log_arg1 }
+	scope:target = { save_scope_as = cmf_log_arg2 }
+	scope:actor = { cmf_log_with_scope_args = { action = ht_log_added_rival } }
+}
+
+ht_remove_rival_effect = {
+	scope:recipient = {
+		remove_rival = scope:target
+	}
+	scope:recipient = { save_scope_as = cmf_log_arg1 }
+	scope:target = { save_scope_as = cmf_log_arg2 }
+	scope:actor = { cmf_log_with_scope_args = { action = ht_log_removed_rival } }
+}
+
+# ── War Effects (two-target: recipient + target) ───────────────────────────────
+
+ht_declare_war_effect = {
+	scope:recipient = {
+		declare_war = scope:target
+	}
+	scope:recipient = { save_scope_as = cmf_log_arg1 }
+	scope:target = { save_scope_as = cmf_log_arg2 }
+	scope:actor = { cmf_log_with_scope_args = { action = ht_log_declared_war } }
+}
+
+ht_white_peace_effect = {
+	scope:recipient = {
+		every_current_war = {
+			limit = { is_in_war = scope:target }
+			white_peace = this
+		}
+	}
+	scope:recipient = { save_scope_as = cmf_log_arg1 }
+	scope:target = { save_scope_as = cmf_log_arg2 }
+	scope:actor = { cmf_log_with_scope_args = { action = ht_log_white_peace } }
+}
+
+ht_add_war_exhaustion_effect = {
+	scope:recipient = {
+		add_war_exhaustion = {
+			value = "global_variable_map(cmm|flag:ht__war_exhaustion_amount)"
+		}
+	}
+	scope:recipient = { save_scope_as = cmf_log_arg2 }
+	scope:actor = { cmf_log_with_scope_arg = { action = ht_log_changed_war_exhaustion } }
+}
+
+# ── Country Management Effects (mixed single/two-target) ───────────────────────
+
+# Two-target: recipient = annexer, target = annexed
+ht_annex_effect = {
+	scope:recipient = {
+		annex_country = {
+			country = scope:target
+			reason = Diplomatic
+			transfer = yes
+		}
+	}
+	scope:recipient = { save_scope_as = cmf_log_arg1 }
+	scope:target = { save_scope_as = cmf_log_arg2 }
+	scope:actor = { cmf_log_with_scope_args = { action = ht_log_annexed } }
+}
+
+# Single-target: recipient = subject to free
+ht_grant_independence_effect = {
+	scope:recipient = {
+		overlord ?= {
+			cancel_subject = prev
+		}
+	}
+	scope:recipient = { save_scope_as = cmf_log_arg2 }
+	scope:actor = { cmf_log_with_scope_arg = { action = ht_log_granted_independence } }
+}
+
+# Two-target: recipient = overlord, target = vassal
+ht_make_vassal_effect = {
+	scope:target = {
+		make_subject_of = {
+			target = scope:recipient
+			type = subject_type:vassal
+		}
+	}
+	scope:recipient = { save_scope_as = cmf_log_arg1 }
+	scope:target = { save_scope_as = cmf_log_arg2 }
+	scope:actor = { cmf_log_with_scope_args = { action = ht_log_vassalized } }
+}
+
+# Single-target: recipient = country whose ruler dies
+ht_kill_ruler_effect = {
+	scope:recipient = {
+		ruler ?= {
+			kill_character = {
+				target = this
+			}
+		}
+	}
+	scope:recipient = { save_scope_as = cmf_log_arg2 }
+	scope:actor = { cmf_log_with_scope_arg = { action = ht_log_killed_ruler } }
+}
+
+# Single-target: recipient = country whose regency ends (random local adult takes the throne)
+ht_end_regency_effect = {
+	scope:recipient = {
+		if = {
+			limit = {
+				any_character = { can_become_a_ruler = yes }
+			}
+			random_character = {
+				limit = { can_become_a_ruler = yes }
+				save_scope_as = ht_new_ruler
+			}
+		}
+		else = {
+			create_character = {
+				age = 35
+				religion = scope:recipient.religion
+				culture = scope:recipient.culture
+				save_scope_as = ht_new_ruler
+			}
+		}
+		set_new_ruler = scope:ht_new_ruler
+	}
+	scope:recipient = { save_scope_as = cmf_log_arg2 }
+	scope:actor = { cmf_log_with_scope_arg = { action = ht_log_ended_regency } }
+}
+
+# Two-target: recipient = source country, target = country to change
+ht_change_religion_effect = {
+	scope:target = {
+		change_religion = scope:recipient.religion
+	}
+	scope:recipient = { save_scope_as = cmf_log_arg1 }
+	scope:target = { save_scope_as = cmf_log_arg2 }
+	scope:actor = { cmf_log_with_scope_args = { action = ht_log_changed_religion } }
+}
+
+# Two-target: recipient = source country, target = country to change
+ht_change_culture_effect = {
+	scope:target = {
+		change_culture = scope:recipient.culture
+	}
+	scope:recipient = { save_scope_as = cmf_log_arg1 }
+	scope:target = { save_scope_as = cmf_log_arg2 }
+	scope:actor = { cmf_log_with_scope_args = { action = ht_log_changed_culture } }
+}
+
+# Two-target: recipient = source country, target = country to change
+ht_change_government_effect = {
+	scope:target = {
+		change_government_type = scope:recipient.government_type
+	}
+	scope:recipient = { save_scope_as = cmf_log_arg1 }
+	scope:target = { save_scope_as = cmf_log_arg2 }
+	scope:actor = { cmf_log_with_scope_args = { action = ht_log_changed_government } }
+}
+
+# Single-target: recipient = country whose pops convert to its primary religion
+# Per-pop fraction = (CMM% / 100) / non_primary_share, clamped to [0, 1], so the total converted equals CMM% of TOTAL pops.
+ht_convert_pops_effect = {
+	scope:recipient = {
+		every_pop = {
+			limit = {
+				NOT = { religion = scope:recipient.religion }
+			}
+			split_pop = {
+				fraction = {
+					value = "global_variable_map(cmm|flag:ht__religion_conversion_percentage)"
+					divide = 100
+					divide = {
+						value = 1
+						subtract = "scope:recipient.religion_percentage_in_country(scope:recipient.religion)"
+						min = 0.001
+					}
+					min = 0
+					max = 1
+				}
+				religion = scope:recipient.religion
+			}
+		}
+	}
+	scope:recipient = { save_scope_as = cmf_log_arg2 }
+	scope:actor = { cmf_log_with_scope_arg = { action = ht_log_converted_pops } }
+}
+
+ht_assimilate_pops_effect = {
+	scope:recipient = {
+		every_pop = {
+			limit = {
+				NOT = { culture = scope:recipient.culture }
+			}
+			split_pop = {
+				fraction = {
+					value = "global_variable_map(cmm|flag:ht__culture_assimilation_percentage)"
+					divide = 100
+					divide = {
+						value = 1
+						subtract = "scope:recipient.culture_percentage_in_country(scope:recipient.culture)"
+						min = 0.001
+					}
+					min = 0
+					max = 1
+				}
+				culture = scope:recipient.culture
+			}
+		}
+	}
+	scope:recipient = { save_scope_as = cmf_log_arg2 }
+	scope:actor = { cmf_log_with_scope_arg = { action = ht_log_converted_pops } }
+}

@@ -1,0 +1,40 @@
+﻿ht_toggle_target = {
+	type = diplomacy
+	category = CATEGORY_HT_ACTIONS
+	ai_tick = never
+	use_enroute = no
+	block_when_at_war = no
+
+	potential = {
+		scope:actor = { cmf_can_use_unrestricted_tools = yes }
+	}
+
+	allow = { }
+
+	select_trigger = {
+		allow_self = yes
+		looking_for_a = country
+		target_flag = recipient
+		name = ht_select_any_to_continue
+
+
+		column = { data = name }
+
+		visible = {
+			NOR = {
+				country_type = building
+				country_type = pop
+			}
+		}
+	}
+
+	effect = {
+		if = {
+			limit = { has_global_variable = ht_target_self }
+			remove_global_variable = ht_target_self
+		}
+		else = {
+			set_global_variable = ht_target_self
+		}
+	}
+}

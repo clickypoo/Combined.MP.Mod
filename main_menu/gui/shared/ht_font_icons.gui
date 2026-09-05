@@ -1,0 +1,9 @@
+﻿texticon = {
+	icon = CATEGORY_HT_ACTIONS
+	iconsize = {
+		texture = "gfx/interface/icons/diplomatic_actions/CATEGORY_HT_ACTIONS.dds"
+		size = { 40 40 }
+		offset = { 0 14 }
+		fontsize = 15
+	}
+}

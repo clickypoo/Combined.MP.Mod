@@ -1,0 +1,34 @@
+﻿l_german:
+ # ── Economy Log Actions (single-target: [actor] [action] [target]) ───────────
+ ht_log_added_gold: "gab [CMMV('ht__gold_amount')] Gold an"
+ ht_log_added_manpower: "stellte [CMMV('ht__manpower_amount')] Arbeitskräfte zur Verfügung für"
+ ht_log_added_stability: "hat [CMMV('ht__stability_amount')] Stabilität verliehen an"
+ ht_log_added_prestige: "hat [CMMV('ht__prestige_amount')] Prestige an"
+ ht_log_added_diplomats: "gab [CMMV('ht__diplomats_amount')] Diplomaten an"
+
+ # ── Diplomacy Log Actions (two-target: [actor] [A] [action] [B]) ─────────────
+ ht_log_forced_alliance: "erzwungene Allianz mit"
+ ht_log_broke_alliance: "das Bündnis mit … aufgelöst"
+ ht_log_forced_guarantee: "Zwangsweise Bürgschaft für"
+ ht_log_broke_guarantee: "widerrufene Bürgschaft für"
+ ht_log_added_truce: "hinzugefügt[CMMV('ht__truce_years')]-jähriger Waffenstillstand mit"
+ ht_log_removed_truce: "Waffenstillstand mit … aufgehoben"
+ ht_log_added_rival: "konkurrierte"
+ ht_log_removed_rival: "unübertroffen"
+
+ # ── War Log Actions (two-target) ─────────────────────────────────────────────
+ ht_log_declared_war: "erklärte den Krieg gegen"
+ ht_log_white_peace: "weiß-friedlich"
+ ht_log_changed_war_exhaustion: "Kriegsmüdigkeit um [CMMV('ht__war_exhaustion_amount')] geändert für"
+
+ # ── Country Management Log Actions (mixed) ───────────────────────────────────
+ ht_log_annexed: "beigefügt"
+ ht_log_granted_independence: "die Unabhängigkeit gewährt"
+ ht_log_vassalized: "unterworfen"
+ ht_log_killed_ruler: "tötete den Herrscher von"
+ ht_log_ended_regency: "beendete die Regentschaft von"
+ ht_log_changed_religion: "Religion kopiert nach"
+ ht_log_changed_culture: "Kultur kopiert nach"
+ ht_log_changed_government: "Regierung kopiert nach"
+ ht_log_converted_pops: "[CMMV('ht__religion_conversion_percentage')] % der Bevölkerung in"
+ ht_log_assimilated_pops: "[CMMV('ht__culture_assimilation_percentage')] % der Bevölkerung in"

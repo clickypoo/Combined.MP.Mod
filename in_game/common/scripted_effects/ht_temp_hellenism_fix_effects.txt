@@ -1,0 +1,43 @@
+﻿# Temporary workaround for the vanilla Platonic Revival multiplayer desync.
+
+# Scope-free: runs from country pulses and the no-scope weather_monthly_pulse.
+ht_temp_enforce_hellenism_desync_fix = {
+	if = {
+		limit = { any_country = { religion = religion:hellenism_religion } }
+		ht_temp_convert_hellenism_to_orthodox = yes
+	}
+}
+
+ht_temp_convert_hellenism_to_orthodox = {
+	every_country = {
+		if = {
+			limit = { religion = religion:hellenism_religion }
+			change_religion = religion:orthodox
+		}
+		every_character = {
+			limit = { religion = religion:hellenism_religion }
+			change_character_religion = religion:orthodox
+		}
+		every_owned_location = {
+			every_pop = {
+				limit = { religion = religion:hellenism_religion }
+				change_pop_religion = religion:orthodox
+			}
+		}
+	}
+}
+
+# Never-run stub that keeps the momentum-waning modifiers and the movements.20 event referenced,
+# silencing the unused/orphaned log warnings our disabled movement would otherwise cause.
+ht_temp_suppress_orphan_warnings = {
+	if = {
+		limit = { always = no }
+		trigger_event_non_silently = movements.20
+		every_movement = {
+			add_movement_modifier = { modifier = hellenism_religion_movement_momentum_waning size = 0 mode = add_and_extend }
+			every_location_with_movement = {
+				add_location_modifier = { modifier = hellenism_religion_movement_momentum_waning_locally size = 0 mode = add_and_extend }
+			}
+		}
+	}
+}

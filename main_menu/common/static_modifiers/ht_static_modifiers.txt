@@ -1,0 +1,7 @@
+﻿ht_unrestricted_diplo_range = {
+	game_data = {
+		category = country
+	}
+
+	diplomatic_range = 100000
+}

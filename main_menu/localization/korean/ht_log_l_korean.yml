@@ -1,0 +1,34 @@
+﻿l_korean:
+ # ── Economy Log Actions (single-target: [actor] [action] [target]) ───────────
+ ht_log_added_gold: "[CMMV('ht__gold_amount')] 금을 ~에게 주었다"
+ ht_log_added_manpower: "[CMMV('ht__manpower_amount')] 인력을 ~에 제공했다"
+ ht_log_added_stability: "[CMMV('ht__stability_amount')]의 안정성을"
+ ht_log_added_prestige: "[CMMV('ht__prestige_amount')]의 명성을 [수혜자]에게 부여했다"
+ ht_log_added_diplomats: "[CMMV('ht__diplomats_amount')]명의 외교관을 ~에게 보냈다"
+
+ # ── Diplomacy Log Actions (two-target: [actor] [A] [action] [B]) ─────────────
+ ht_log_forced_alliance: "~와의 강압적 동맹"
+ ht_log_broke_alliance: "~와의 동맹을 파기했다"
+ ht_log_forced_guarantee: "~에 대한 강제 보증"
+ ht_log_broke_guarantee: "~에 대한 보증을 철회함"
+ ht_log_added_truce: "[CMMV('ht__truce_years')]년 간의 휴전 협정을 추가했습니다."
+ ht_log_removed_truce: "~와의 휴전 협정을 파기했다"
+ ht_log_added_rival: "견줄 만한"
+ ht_log_removed_rival: "타의 추종을 불허하는"
+
+ # ── War Log Actions (two-target) ─────────────────────────────────────────────
+ ht_log_declared_war: "~에게 선전포고를 했다"
+ ht_log_white_peace: "화이트-피스드"
+ ht_log_changed_war_exhaustion: "[CMMV('ht__war_exhaustion_amount')]로 전쟁 피로도를 변경했습니다."
+
+ # ── Country Management Log Actions (mixed) ───────────────────────────────────
+ ht_log_annexed: "병합된"
+ ht_log_granted_independence: "~에 독립을 부여했다"
+ ht_log_vassalized: "속국으로 전락한"
+ ht_log_killed_ruler: "의 통치자를 처형함"
+ ht_log_ended_regency: "의 섭정을 종료했습니다"
+ ht_log_changed_religion: "종교를 ~로 베껴서"
+ ht_log_changed_culture: "문화를 복사하여"
+ ht_log_changed_government: "정부에서 복사하여"
+ ht_log_converted_pops: "[CMMV('ht__religion_conversion_percentage')]%의 인구가 개종했습니다."
+ ht_log_assimilated_pops: "인구의 [CMMV('ht__culture_assimilation_percentage')]%가"

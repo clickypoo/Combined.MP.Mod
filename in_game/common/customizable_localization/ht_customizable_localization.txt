@@ -1,0 +1,79 @@
+﻿ht_get_current_target = {
+	type = country
+	text = {
+		trigger = { has_global_variable = ht_target_self }
+		localization_key = ht_target_label_self
+	}
+	text = {
+		trigger = { country_exists = ROOT }
+		localization_key = ht_target_label_selected_act
+	}
+	text = {
+		localization_key = ht_another_country_placeholder
+		fallback = yes
+	}
+}
+
+# Recipient-slot display name. type = none keeps it null-safe when scope:recipient is null at
+# preview time; the ht_target_self branch returns the player's own name because recipient = actor
+# in that mode.
+ht_get_recipient_country = {
+	type = country
+	text = {
+		trigger = { has_global_variable = ht_target_self }
+		localization_key = ht_self_country_name
+	}
+	text = {
+		trigger = { country_exists = ROOT }
+		localization_key = ht_recipient_country_name
+	}
+	text = {
+		localization_key = ht_another_country_placeholder
+		fallback = yes
+	}
+}
+
+ht_get_recipient_country_religion = {
+	type = country
+	text = {
+		trigger = { has_global_variable = ht_target_self }
+		localization_key = ht_self_country_religion
+	}
+	text = {
+		trigger = { country_exists = ROOT }
+		localization_key = ht_recipient_country_religion
+	}
+	text = {
+		localization_key = ht_another_religion_placeholder
+		fallback = yes
+	}
+}
+
+ht_get_recipient_country_culture = {
+	type = country
+	text = {
+		trigger = { has_global_variable = ht_target_self }
+		localization_key = ht_self_country_culture
+	}
+	text = {
+		trigger = { country_exists = ROOT }
+		localization_key = ht_recipient_country_culture
+	}
+	text = {
+		localization_key = ht_another_culture_placeholder
+		fallback = yes
+	}
+}
+# Picked-target display name. type = none keeps it null-safe when scope:target is null at preview
+# time before the user picks.
+ht_get_target_country = {
+	type = none
+	text = {
+		trigger = { country_exists = scope:target }
+		localization_key = ht_picked_country_name
+	}
+	text = {
+		localization_key = ht_another_country_placeholder
+		fallback = yes
+	}
+}

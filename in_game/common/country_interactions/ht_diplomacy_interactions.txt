@@ -1,0 +1,671 @@
+﻿ht_force_alliance = {
+	type = diplomacy
+	category = CATEGORY_HT_ACTIONS
+	ai_tick = never
+	use_enroute = no
+	block_when_at_war = no
+
+	potential = {
+		scope:actor = { cmf_can_use_unrestricted_tools = yes }
+	}
+
+	allow = { }
+
+	select_trigger = {
+		allow_self = yes
+		looking_for_a = country
+		target_flag = recipient
+		name = ht_select_first_country
+
+
+		show_if = {
+			NOT = { has_global_variable = ht_target_self }
+		}
+
+		column = { data = name }
+
+		visible = {
+			NOR = {
+				country_type = building
+				country_type = pop
+			}
+		}
+	}
+
+	select_trigger = {
+		allow_self = yes
+		looking_for_a = country
+		target_flag = target
+		name = ht_select_second_country
+
+
+		show_if = {
+			OR = {
+				has_global_variable = ht_target_self
+				exists = scope:recipient
+			}
+		}
+
+		column = { data = name }
+
+		visible = {
+			NOR = {
+				country_type = building
+				country_type = pop
+			}
+			NOT = { this = scope:recipient }
+			OR = {
+				NOT = { has_global_variable = ht_target_self }
+				NOT = { this = scope:actor }
+			}
+		}
+	}
+
+	effect = {
+		hidden_effect = {
+			if = {
+				limit = { has_global_variable = ht_target_self }
+				scope:actor = { save_scope_as = recipient }
+			}
+			if = {
+				limit = {
+					exists = scope:recipient
+					exists = scope:target
+				}
+				ht_force_alliance_effect = yes
+			}
+		}
+	}
+}
+
+ht_break_alliance = {
+	type = diplomacy
+	category = CATEGORY_HT_ACTIONS
+	ai_tick = never
+	use_enroute = no
+	block_when_at_war = no
+
+	potential = {
+		scope:actor = { cmf_can_use_unrestricted_tools = yes }
+	}
+
+	allow = { }
+
+	select_trigger = {
+		allow_self = yes
+		looking_for_a = country
+		target_flag = recipient
+		name = ht_select_first_country
+
+
+		show_if = {
+			NOT = { has_global_variable = ht_target_self }
+		}
+
+		column = { data = name }
+
+		visible = {
+			NOR = {
+				country_type = building
+				country_type = pop
+			}
+		}
+	}
+
+	select_trigger = {
+		allow_self = yes
+		looking_for_a = country
+		target_flag = target
+		name = ht_select_second_country
+
+
+		show_if = {
+			OR = {
+				has_global_variable = ht_target_self
+				exists = scope:recipient
+			}
+		}
+
+		column = { data = name }
+
+		visible = {
+			NOR = {
+				country_type = building
+				country_type = pop
+			}
+			NOT = { this = scope:recipient }
+			OR = {
+				NOT = { has_global_variable = ht_target_self }
+				NOT = { this = scope:actor }
+			}
+		}
+
+		enabled = {
+			OR = {
+				AND = {
+					has_global_variable = ht_target_self
+					is_allied_with = { target = scope:actor }
+				}
+				AND = {
+					NOT = { has_global_variable = ht_target_self }
+					is_allied_with = { target = scope:recipient }
+				}
+			}
+		}
+	}
+
+	effect = {
+		hidden_effect = {
+			if = {
+				limit = { has_global_variable = ht_target_self }
+				scope:actor = { save_scope_as = recipient }
+			}
+			if = {
+				limit = {
+					exists = scope:recipient
+					exists = scope:target
+				}
+				ht_break_alliance_effect = yes
+			}
+		}
+	}
+}
+
+ht_force_guarantee = {
+	type = diplomacy
+	category = CATEGORY_HT_ACTIONS
+	ai_tick = never
+	use_enroute = no
+	block_when_at_war = no
+
+	potential = {
+		scope:actor = { cmf_can_use_unrestricted_tools = yes }
+	}
+
+	allow = { }
+
+	select_trigger = {
+		allow_self = yes
+		looking_for_a = country
+		target_flag = recipient
+		name = ht_select_first_country
+
+
+		show_if = {
+			NOT = { has_global_variable = ht_target_self }
+		}
+
+		column = { data = name }
+
+		visible = {
+			NOR = {
+				country_type = building
+				country_type = pop
+			}
+		}
+	}
+
+	select_trigger = {
+		allow_self = yes
+		looking_for_a = country
+		target_flag = target
+		name = ht_select_second_country
+
+
+		show_if = {
+			OR = {
+				has_global_variable = ht_target_self
+				exists = scope:recipient
+			}
+		}
+
+		column = { data = name }
+
+		visible = {
+			NOR = {
+				country_type = building
+				country_type = pop
+			}
+			NOT = { this = scope:recipient }
+			OR = {
+				NOT = { has_global_variable = ht_target_self }
+				NOT = { this = scope:actor }
+			}
+		}
+	}
+
+	effect = {
+		hidden_effect = {
+			if = {
+				limit = { has_global_variable = ht_target_self }
+				scope:actor = { save_scope_as = recipient }
+			}
+			if = {
+				limit = {
+					exists = scope:recipient
+					exists = scope:target
+				}
+				ht_force_guarantee_effect = yes
+			}
+		}
+	}
+}
+
+ht_break_guarantee = {
+	type = diplomacy
+	category = CATEGORY_HT_ACTIONS
+	ai_tick = never
+	use_enroute = no
+	block_when_at_war = no
+
+	potential = {
+		scope:actor = { cmf_can_use_unrestricted_tools = yes }
+	}
+
+	allow = { }
+
+	select_trigger = {
+		allow_self = yes
+		looking_for_a = country
+		target_flag = recipient
+		name = ht_select_first_country
+
+
+		show_if = {
+			NOT = { has_global_variable = ht_target_self }
+		}
+
+		column = { data = name }
+
+		visible = {
+			NOR = {
+				country_type = building
+				country_type = pop
+			}
+		}
+	}
+
+	select_trigger = {
+		allow_self = yes
+		looking_for_a = country
+		target_flag = target
+		name = ht_select_second_country
+
+
+		show_if = {
+			OR = {
+				has_global_variable = ht_target_self
+				exists = scope:recipient
+			}
+		}
+
+		column = { data = name }
+
+		visible = {
+			NOR = {
+				country_type = building
+				country_type = pop
+			}
+			NOT = { this = scope:recipient }
+			OR = {
+				NOT = { has_global_variable = ht_target_self }
+				NOT = { this = scope:actor }
+			}
+		}
+
+		enabled = {
+			OR = {
+				AND = {
+					has_global_variable = ht_target_self
+					receiving_scripted_relation = {
+						type = relation_type:guarantee
+						target = scope:actor
+					}
+				}
+				AND = {
+					NOT = { has_global_variable = ht_target_self }
+					receiving_scripted_relation = {
+						type = relation_type:guarantee
+						target = scope:recipient
+					}
+				}
+			}
+		}
+	}
+
+	effect = {
+		hidden_effect = {
+			if = {
+				limit = { has_global_variable = ht_target_self }
+				scope:actor = { save_scope_as = recipient }
+			}
+			if = {
+				limit = {
+					exists = scope:recipient
+					exists = scope:target
+				}
+				ht_break_guarantee_effect = yes
+			}
+		}
+	}
+}
+
+ht_add_truce = {
+	type = diplomacy
+	category = CATEGORY_HT_ACTIONS
+	ai_tick = never
+	use_enroute = no
+	block_when_at_war = no
+
+	potential = {
+		scope:actor = { cmf_can_use_unrestricted_tools = yes }
+	}
+
+	allow = { }
+
+	select_trigger = {
+		allow_self = yes
+		looking_for_a = country
+		target_flag = recipient
+		name = ht_select_first_country
+
+
+		show_if = {
+			NOT = { has_global_variable = ht_target_self }
+		}
+
+		column = { data = name }
+
+		visible = {
+			NOR = {
+				country_type = building
+				country_type = pop
+			}
+		}
+	}
+
+	select_trigger = {
+		allow_self = yes
+		looking_for_a = country
+		target_flag = target
+		name = ht_select_second_country
+
+
+		show_if = {
+			OR = {
+				has_global_variable = ht_target_self
+				exists = scope:recipient
+			}
+		}
+
+		column = { data = name }
+
+		visible = {
+			NOR = {
+				country_type = building
+				country_type = pop
+			}
+			NOT = { this = scope:recipient }
+			OR = {
+				NOT = { has_global_variable = ht_target_self }
+				NOT = { this = scope:actor }
+			}
+		}
+	}
+
+	effect = {
+		hidden_effect = {
+			if = {
+				limit = { has_global_variable = ht_target_self }
+				scope:actor = { save_scope_as = recipient }
+			}
+			if = {
+				limit = {
+					exists = scope:recipient
+					exists = scope:target
+				}
+				ht_add_truce_effect = yes
+			}
+		}
+	}
+}
+
+ht_remove_truce = {
+	type = diplomacy
+	category = CATEGORY_HT_ACTIONS
+	ai_tick = never
+	use_enroute = no
+	block_when_at_war = no
+
+	potential = {
+		scope:actor = { cmf_can_use_unrestricted_tools = yes }
+	}
+
+	allow = { }
+
+	select_trigger = {
+		allow_self = yes
+		looking_for_a = country
+		target_flag = recipient
+		name = ht_select_first_country
+
+
+		show_if = {
+			NOT = { has_global_variable = ht_target_self }
+		}
+
+		column = { data = name }
+
+		visible = {
+			NOR = {
+				country_type = building
+				country_type = pop
+			}
+		}
+	}
+
+	select_trigger = {
+		allow_self = yes
+		looking_for_a = country
+		target_flag = target
+		name = ht_select_second_country
+
+
+		show_if = {
+			OR = {
+				has_global_variable = ht_target_self
+				exists = scope:recipient
+			}
+		}
+
+		column = { data = name }
+
+		visible = {
+			NOR = {
+				country_type = building
+				country_type = pop
+			}
+			NOT = { this = scope:recipient }
+			OR = {
+				NOT = { has_global_variable = ht_target_self }
+				NOT = { this = scope:actor }
+			}
+		}
+	}
+
+	effect = {
+		hidden_effect = {
+			if = {
+				limit = { has_global_variable = ht_target_self }
+				scope:actor = { save_scope_as = recipient }
+			}
+			if = {
+				limit = {
+					exists = scope:recipient
+					exists = scope:target
+				}
+				ht_remove_truce_effect = yes
+			}
+		}
+	}
+}
+
+ht_add_rival = {
+	type = diplomacy
+	category = CATEGORY_HT_ACTIONS
+	ai_tick = never
+	use_enroute = no
+	block_when_at_war = no
+
+	potential = {
+		scope:actor = { cmf_can_use_unrestricted_tools = yes }
+	}
+
+	allow = { }
+
+	select_trigger = {
+		allow_self = yes
+		looking_for_a = country
+		target_flag = recipient
+		name = ht_select_first_country
+
+
+		show_if = {
+			NOT = { has_global_variable = ht_target_self }
+		}
+
+		column = { data = name }
+
+		visible = {
+			NOR = {
+				country_type = building
+				country_type = pop
+			}
+		}
+	}
+
+	select_trigger = {
+		allow_self = yes
+		looking_for_a = country
+		target_flag = target
+		name = ht_select_second_country
+
+
+		show_if = {
+			OR = {
+				has_global_variable = ht_target_self
+				exists = scope:recipient
+			}
+		}
+
+		column = { data = name }
+
+		visible = {
+			NOR = {
+				country_type = building
+				country_type = pop
+			}
+			NOT = { this = scope:recipient }
+			OR = {
+				NOT = { has_global_variable = ht_target_self }
+				NOT = { this = scope:actor }
+			}
+		}
+	}
+
+	effect = {
+		hidden_effect = {
+			if = {
+				limit = { has_global_variable = ht_target_self }
+				scope:actor = { save_scope_as = recipient }
+			}
+			if = {
+				limit = {
+					exists = scope:recipient
+					exists = scope:target
+				}
+				ht_add_rival_effect = yes
+			}
+		}
+	}
+}
+
+ht_remove_rival = {
+	type = diplomacy
+	category = CATEGORY_HT_ACTIONS
+	ai_tick = never
+	use_enroute = no
+	block_when_at_war = no
+
+	potential = {
+		scope:actor = { cmf_can_use_unrestricted_tools = yes }
+	}
+
+	allow = { }
+
+	select_trigger = {
+		allow_self = yes
+		looking_for_a = country
+		target_flag = recipient
+		name = ht_select_first_country
+
+
+		show_if = {
+			NOT = { has_global_variable = ht_target_self }
+		}
+
+		column = { data = name }
+
+		visible = {
+			NOR = {
+				country_type = building
+				country_type = pop
+			}
+		}
+	}
+
+	select_trigger = {
+		allow_self = yes
+		looking_for_a = country
+		target_flag = target
+		name = ht_select_second_country
+
+
+		show_if = {
+			OR = {
+				has_global_variable = ht_target_self
+				exists = scope:recipient
+			}
+		}
+
+		column = { data = name }
+
+		visible = {
+			NOR = {
+				country_type = building
+				country_type = pop
+			}
+			NOT = { this = scope:recipient }
+			OR = {
+				NOT = { has_global_variable = ht_target_self }
+				NOT = { this = scope:actor }
+			}
+		}
+	}
+
+	effect = {
+		hidden_effect = {
+			if = {
+				limit = { has_global_variable = ht_target_self }
+				scope:actor = { save_scope_as = recipient }
+			}
+			if = {
+				limit = {
+					exists = scope:recipient
+					exists = scope:target
+				}
+				ht_remove_rival_effect = yes
+			}
+		}
+	}
+}

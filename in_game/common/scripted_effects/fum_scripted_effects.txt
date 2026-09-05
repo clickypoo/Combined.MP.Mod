@@ -1,0 +1,281 @@
+﻿fum_remove_sop_effect = {
+	every_country = {
+		limit = {
+			country_type = pop
+		}
+		change_country_type = building
+		every_owned_building = {
+			change_building_level = -10
+		}
+	}
+}
+
+fum_europe_centric_effect = {
+	if = {
+		limit = { has_global_variable = fum_block_recolonization_setting }
+		sub_continent:east_asia = { fum_remove_and_disable_sub_continent = yes }
+		sub_continent:south_asia = { fum_remove_and_disable_sub_continent = yes }
+		sub_continent:south_east_asia = { fum_remove_and_disable_sub_continent = yes }
+		sub_continent:australasia = { fum_remove_and_disable_sub_continent = yes }
+		sub_continent:pacific_islands = { fum_remove_and_disable_sub_continent = yes }
+	} else = {
+		sub_continent:east_asia = { fum_remove_sub_continent = yes }
+		sub_continent:south_asia = { fum_remove_sub_continent = yes }
+		sub_continent:south_east_asia = { fum_remove_sub_continent = yes }
+		sub_continent:australasia = { fum_remove_sub_continent = yes }
+		sub_continent:pacific_islands = { fum_remove_sub_continent = yes }
+	}
+	sub_continent:south_america = { fum_remove_sub_continent = yes }
+}
+
+fum_asia_centric_effect = {
+	if = {
+		limit = { has_global_variable = fum_block_recolonization_setting }
+		sub_continent:western_europe = { fum_remove_and_disable_sub_continent = yes }
+		sub_continent:eastern_europe = { fum_remove_and_disable_sub_continent = yes }
+		sub_continent:north_africa = { fum_remove_and_disable_sub_continent = yes }
+		sub_continent:west_africa = { fum_remove_and_disable_sub_continent = yes }
+		sub_continent:central_africa = { fum_remove_and_disable_sub_continent = yes }
+	}
+	else = {
+		sub_continent:western_europe = { fum_remove_sub_continent = yes }
+		sub_continent:eastern_europe = { fum_remove_sub_continent = yes }
+		sub_continent:north_africa = { fum_remove_sub_continent = yes }
+		sub_continent:west_africa = { fum_remove_sub_continent = yes }
+		sub_continent:central_africa = { fum_remove_sub_continent = yes }
+	}
+	sub_continent:north_america = { fum_remove_sub_continent = yes }
+	sub_continent:south_america = { fum_remove_sub_continent = yes }
+}
+
+fum_remove_east_asia_effect = {
+	if = {
+		limit = { has_global_variable = fum_block_recolonization_setting }
+		sub_continent:east_asia = { fum_remove_and_disable_sub_continent = yes }
+	} else = {
+		sub_continent:east_asia = { fum_remove_sub_continent = yes }
+	}
+}
+
+fum_remove_low_importance_nations_effect = {
+	sub_continent:pacific_islands = { fum_remove_sub_continent = yes }
+	sub_continent:north_america = { fum_remove_sub_continent = yes }
+	sub_continent:south_america = { fum_remove_sub_continent = yes }
+}
+
+fum_remove_sub_continent = {
+	every_location_in_sub_continent = {
+		limit = {
+			is_land = yes
+		}
+		fum_remove_location = yes
+	}
+}
+
+fum_remove_and_disable_sub_continent = {
+	every_location_in_sub_continent = {
+		limit = {
+			is_land = yes
+		}
+		if = {
+			limit = {
+				fum_can_remove_location = yes
+			}
+			add_location_modifier = {
+				modifier = fum_location_disabled_static_modifier
+				years = -1
+				mode = add
+			}
+			fum_disable_location = yes
+		}
+	}
+}
+
+fum_remove_location = {
+	if = {
+		limit = {
+			fum_can_remove_location = yes
+		}
+		fum_strip_location = yes
+	}
+}
+
+fum_strip_location = {
+	every_unit_in_location = {
+		destroy_unit = yes
+	}
+	every_buildings_in_location = {
+		change_building_level = -100
+	}
+	if = {
+		limit = {
+			has_owner = yes
+		}
+		owner = {
+			abandon_location = prev
+		}
+	}
+}
+
+fum_disable_location = {
+	fum_remove_location_and_pops = yes
+	change_development = -100
+	change_location_rank = location_rank:rural_settlement
+}
+
+# Regardless of pop removal settings, disabled regions should have their pops removed.
+fum_remove_location_and_pops = {
+	fum_strip_location = yes
+	every_pop = {
+		destroy_pop = this
+	}
+}
+
+fum_remove_unowned_pops = {
+	every_location_in_the_world = {
+		if = {
+			limit = {
+				has_owner = no
+			}
+			every_pop = {
+				destroy_pop = this
+			}
+		}
+	}
+}
+
+# Root scope: country. Culls the lowest-stat unprotected adults down to the max.
+fum_cull_characters = {
+	set_variable = { name = fum_to_cull value = 0 }
+	every_character = {
+		limit = { is_adult = yes }
+		prev = { change_variable = { name = fum_to_cull add = 1 } }
+	}
+	change_variable = { name = fum_to_cull subtract = global_var:fum__max_characters_per_nation }
+
+	if = {
+		limit = { var:fum_to_cull > 0 }
+		ordered_character = {
+			order_by = {
+				value = total_abilities
+				multiply = -1
+			}
+			max = var:fum_to_cull
+			check_range_bounds = no
+			limit = { fum_is_protected_character = no }
+			kill_character = this
+		}
+	}
+	remove_variable = fum_to_cull
+}
+
+fum_apply_meritocracy_spread = {
+	every_country = {
+		every_owned_location = {
+			limit = {
+				any_neighbor_location = {
+					OR = {
+						sub_continent = sub_continent:east_asia
+						sub_continent = sub_continent:south_asia
+					}
+				}
+			}
+			change_institution_progress = { type = institution:meritocracy value = 100 }
+		}
+	}
+}
+
+fum_apply_performance_settings = {
+	if = {
+		limit = { has_global_variable = fum__sop_removal_setting }
+		fum_remove_sop_effect = yes
+	}
+	if = {
+		limit = { has_global_variable = fum__europe_centric_setting }
+		fum_europe_centric_effect = yes
+	}
+	if = {
+		limit = { has_global_variable = fum__asia_centric_setting }
+		fum_asia_centric_effect = yes
+	}
+	if = {
+		limit = { has_global_variable = fum__remove_low_importance_setting }
+		fum_remove_low_importance_nations_effect = yes
+	}
+	if = {
+		limit = { has_global_variable = fum__remove_east_asia_setting }
+		fum_remove_east_asia_effect = yes
+	}
+	if = {
+		limit = { has_global_variable = fum__pop_removal_setting }
+		fum_remove_unowned_pops = yes
+	}
+}
+
+fum_refresh_all_corrections = {
+	every_country = {
+		fum_refresh_corrections = yes
+	}
+}
+
+# Root scope: country.
+fum_refresh_corrections = {
+	fum_refresh_correction = { MODIFIER = country_child_education BASE = 1 DELTA = fum_day_skip_delta }
+	fum_refresh_correction = { MODIFIER = land_morale_movement_cost BASE = 0 DELTA = fum_tick_ratio_delta }
+	fum_refresh_correction = { MODIFIER = land_morale_attrition_cost BASE = 0 DELTA = fum_battle_day_tick_delta }
+	fum_refresh_correction = { MODIFIER = army_movement_speed BASE = 1 DELTA = fum_army_speed_delta }
+	fum_refresh_correction = { MODIFIER = navy_movement_speed BASE = 1 DELTA = fum_navy_speed_delta }
+	fum_refresh_correction = { MODIFIER = naval_damage_done BASE = 1 DELTA = fum_battle_length_delta }
+	fum_refresh_correction = { MODIFIER = army_heavy_infantry_power BASE = 1 DELTA = fum_battle_length_delta }
+	fum_refresh_correction = { MODIFIER = army_light_infantry_power BASE = 1 DELTA = fum_battle_length_delta }
+	fum_refresh_correction = { MODIFIER = army_heavy_cavalry_power BASE = 1 DELTA = fum_battle_length_delta }
+	fum_refresh_correction = { MODIFIER = army_light_cavalry_power BASE = 1 DELTA = fum_battle_length_delta }
+	fum_refresh_correction = { MODIFIER = army_artillery_power BASE = 1 DELTA = fum_battle_length_delta }
+	fum_refresh_correction = { MODIFIER = army_auxiliary_power BASE = 1 DELTA = fum_battle_length_delta }
+	fum_refresh_correction = { MODIFIER = combat_speed_modifier BASE = 1 DELTA = fum_battle_length_delta }
+}
+
+# Recomputes fum_corr_$MODIFIER$ as $DELTA$ x ($BASE$ + the country's other $MODIFIER$ sources) so
+# the correction multiplies them instead of shifting them. $BASE$ is 1 where the engine applies the
+# modifier as (1 + sum) and 0 where the sum is the whole quantity. modifier:$MODIFIER$ includes the
+# correction already applied, which is whatever fum_corr_$MODIFIER$_value currently returns.
+# Dropping the variable at a zero delta keeps a setting the player left off out of the save.
+# Root scope: country.
+fum_refresh_correction = {
+	set_local_variable = {
+		name = fum_delta
+		value = $DELTA$
+	}
+	if = {
+		limit = { local_var:fum_delta = 0 }
+		if = {
+			limit = { has_variable = fum_corr_$MODIFIER$ }
+			remove_variable = fum_corr_$MODIFIER$
+		}
+	}
+	else = {
+		set_local_variable = {
+			name = fum_others
+			value = modifier:$MODIFIER$
+		}
+		change_local_variable = {
+			name = fum_others
+			subtract = fum_corr_$MODIFIER$_value
+		}
+		change_local_variable = {
+			name = fum_others
+			add = $BASE$
+		}
+		change_local_variable = {
+			name = fum_others
+			max = 0
+		}
+		set_variable = {
+			name = fum_corr_$MODIFIER$
+			value = {
+				value = local_var:fum_others
+				multiply = local_var:fum_delta
+			}
+		}
+	}
+}

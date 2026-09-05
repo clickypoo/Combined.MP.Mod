@@ -1,0 +1,34 @@
+﻿l_russian:
+ # ── Economy Log Actions (single-target: [actor] [action] [target]) ───────────
+ ht_log_added_gold: "отдал [CMMV('ht__gold_amount')] золота"
+ ht_log_added_manpower: "предоставил [CMMV('ht__manpower_amount')] трудовых ресурсов для"
+ ht_log_added_stability: "присвоил [CMMV('ht__stability_amount')] стабильность"
+ ht_log_added_prestige: "присвоил [CMMV('ht__prestige_amount')] престижа"
+ ht_log_added_diplomats: "предоставил [CMMV('ht__diplomats_amount')] дипломатов"
+
+ # ── Diplomacy Log Actions (two-target: [actor] [A] [action] [B]) ─────────────
+ ht_log_forced_alliance: "вынужденный союз с"
+ ht_log_broke_alliance: "разорвал союз с"
+ ht_log_forced_guarantee: "принудительная гарантия на"
+ ht_log_broke_guarantee: "аннулирована гарантия по"
+ ht_log_added_truce: "добавлено [CMMV('ht__truce_years')]-летнее перемирие с"
+ ht_log_removed_truce: "расторг перемирие с"
+ ht_log_added_rival: "не уступал"
+ ht_log_removed_rival: "не имеющий себе равных"
+
+ # ── War Log Actions (two-target) ─────────────────────────────────────────────
+ ht_log_declared_war: "объявил войну"
+ ht_log_white_peace: "бело-голубой"
+ ht_log_changed_war_exhaustion: "заменил значение «военного истощения» на [CMMV('ht__war_exhaustion_amount')] для"
+
+ # ── Country Management Log Actions (mixed) ───────────────────────────────────
+ ht_log_annexed: "прилагается"
+ ht_log_granted_independence: "предоставила независимость"
+ ht_log_vassalized: "поставленный в зависимость"
+ ht_log_killed_ruler: "убил правителя"
+ ht_log_ended_regency: "завершил регентство в"
+ ht_log_changed_religion: "скопировал религию в"
+ ht_log_changed_culture: "скопировала культуру в"
+ ht_log_changed_government: "скопировал правительство в"
+ ht_log_converted_pops: "[CMMV('ht__religion_conversion_percentage')]% населения в"
+ ht_log_assimilated_pops: "ассимилировалось [CMMV('ht__culture_assimilation_percentage')]% населения в"

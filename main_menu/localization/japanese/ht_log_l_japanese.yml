@@ -1,0 +1,34 @@
+﻿l_japanese:
+ # ── Economy Log Actions (single-target: [actor] [action] [target]) ───────────
+ ht_log_added_gold: "[CMMV('ht__gold_amount')]のゴールドを"
+ ht_log_added_manpower: "[CMMV('ht__manpower_amount')] の人員を"
+ ht_log_added_stability: "[CMMV('ht__stability_amount')] の安定性を"
+ ht_log_added_prestige: "[CMMV('ht__prestige_amount')] の威信を"
+ ht_log_added_diplomats: "[CMMV('ht__diplomats_amount')]人の外交官を"
+
+ # ── Diplomacy Log Actions (two-target: [actor] [A] [action] [B]) ─────────────
+ ht_log_forced_alliance: "～との強制的な同盟"
+ ht_log_broke_alliance: "…との同盟関係を解消した"
+ ht_log_forced_guarantee: "～に対する強制保証"
+ ht_log_broke_guarantee: "～に関する保証を取り消した"
+ ht_log_added_truce: "[CMMV('ht__truce_years')]年の休戦が追加されました。"
+ ht_log_removed_truce: "との休戦を解除した"
+ ht_log_added_rival: "匹敵した"
+ ht_log_removed_rival: "比類のない"
+
+ # ── War Log Actions (two-target) ─────────────────────────────────────────────
+ ht_log_declared_war: "…に宣戦布告した"
+ ht_log_white_peace: "ホワイト・ピースド"
+ ht_log_changed_war_exhaustion: "[CMMV('ht__war_exhaustion_amount')] を使用して、戦争による消耗量を変更しました。"
+
+ # ── Country Management Log Actions (mixed) ───────────────────────────────────
+ ht_log_annexed: "併合された"
+ ht_log_granted_independence: "に独立を認めた"
+ ht_log_vassalized: "従属状態にある"
+ ht_log_killed_ruler: "の君主を殺害しました"
+ ht_log_ended_regency: "の摂政を終了させました"
+ ht_log_changed_religion: "宗教をコピーして"
+ ht_log_changed_culture: "文化をコピーして"
+ ht_log_changed_government: "政府をコピーして"
+ ht_log_converted_pops: "[CMMV('ht__religion_conversion_percentage')]%の人口が改宗した"
+ ht_log_assimilated_pops: "対象集団の [CMMV('ht__culture_assimilation_percentage')]% が同化された"
