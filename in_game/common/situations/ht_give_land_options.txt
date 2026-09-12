@@ -1,0 +1,31 @@
+﻿# Land size options listed by the Give Land size select.
+
+ht_size_location = {
+	monthly_spawn_chance = 0
+	can_start = { always = no }
+	can_end = { always = no }
+	visible = { always = no }
+	on_start = { }
+	on_monthly = { }
+	on_ended = { }
+}
+
+ht_size_province = {
+	monthly_spawn_chance = 0
+	can_start = { always = no }
+	can_end = { always = no }
+	visible = { always = no }
+	on_start = { }
+	on_monthly = { }
+	on_ended = { }
+}
+
+ht_size_area = {
+	monthly_spawn_chance = 0
+	can_start = { always = no }
+	can_end = { always = no }
+	visible = { always = no }
+	on_start = { }
+	on_monthly = { }
+	on_ended = { }
+}

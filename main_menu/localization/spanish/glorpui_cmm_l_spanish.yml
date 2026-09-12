@@ -92,3 +92,6 @@
  game_concept_glorpui_banner_logo_desc: ""
  game_concept_glorpui_banner_background: ""
  game_concept_glorpui_banner_background_desc: ""
+ glorpui__showUnavailableSocietalValueSuggestions_name: "Mostrar sugerencias no disponibles para promover los valores sociales (Vanilla)"
+ glorpui__showUnavailableSocietalValueSuggestions_desc: "Las descripciones emergentes de «valor social» enumeran todas las reformas gubernamentales, leyes y privilegios patrimoniales que aumentan ese valor, incluidas aquellas que aún no puedes aprovechar. Si se desactivan, solo se muestran aquellas que puedes aprovechar ahora mismo."
+ glorpui__showUnavailableSocietalValueSuggestions: "glorpui__showUnavailableSocietalValueSuggestions"

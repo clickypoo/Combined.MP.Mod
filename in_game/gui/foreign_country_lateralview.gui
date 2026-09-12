@@ -1054,7 +1054,7 @@ lateralview = {
 								#HEIR
 								character_frame_medium = {
 									size = {64 75}
-                                    datacontext = "[ForeignCountryView.GetHeirSelection]"
+									datacontext = "[ForeignCountryView.GetHeirSelection]"
 
 									blockoverride "portrait_datacontext" {
 										datacontext = "[Country.GetGovernment.GetHeir]"

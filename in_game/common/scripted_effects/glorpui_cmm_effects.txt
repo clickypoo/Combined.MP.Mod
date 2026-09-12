@@ -2,12 +2,12 @@
 # Root scope: country.
 glorpui_register_cmf_mod = {
 	# Toggles (toggles) Tab
-	## General (general) Group
+	## Left Panel (leftpanel) Group
 	cmm_register_bool_setting = {
 		mod_id = glorpui
 		setting_id = useVanillaPortrait
 		tab_id = toggles
-		group_id = general
+		group_id = leftpanel
 		default_value = 0
 	}
 	cmm_sync_bool_alias = {
@@ -17,9 +17,33 @@ glorpui_register_cmf_mod = {
 
 	cmm_register_bool_setting = {
 		mod_id = glorpui
+		setting_id = useDefaultIconsBGLeftPanel
+		tab_id = toggles
+		group_id = leftpanel
+		default_value = 0
+	}
+	cmm_sync_bool_alias = {
+		setting = glorpui__useDefaultIconsBGLeftPanel
+		alias = useDefaultIconsBGLeftPanel
+	}
+
+	cmm_register_bool_setting = {
+		mod_id = glorpui
+		setting_id = useDefaultIconsLeftPanel
+		tab_id = toggles
+		group_id = leftpanel
+		default_value = 0
+	}
+	cmm_sync_bool_alias = {
+		setting = glorpui__useDefaultIconsLeftPanel
+		alias = useDefaultIconsLeftPanel
+	}
+
+	cmm_register_bool_setting = {
+		mod_id = glorpui
 		setting_id = useStaticFlag
 		tab_id = toggles
-		group_id = general
+		group_id = leftpanel
 		default_value = 0
 	}
 	cmm_sync_bool_alias = {
@@ -31,8 +55,8 @@ glorpui_register_cmf_mod = {
 		mod_id = glorpui
 		setting_id = useFramedStaticFlag
 		tab_id = toggles
-		group_id = general
-		default_value = 0
+		group_id = leftpanel
+		default_value = 1
 	}
 	cmm_sync_bool_alias_inverted = {
 		setting = glorpui__useFramedStaticFlag
@@ -45,38 +69,40 @@ glorpui_register_cmf_mod = {
 
 	cmm_register_bool_setting = {
 		mod_id = glorpui
-		setting_id = useDefaultIconsBGLeftPanel
-		tab_id = toggles
-		group_id = general
-		default_value = 0
-	}
-	cmm_sync_bool_alias = {
-		setting = glorpui__useDefaultIconsBGLeftPanel
-		alias = useDefaultIconsBGLeftPanel
-	}
-
-	cmm_register_bool_setting = {
-		mod_id = glorpui
-		setting_id = useDefaultIconsLeftPanel
-		tab_id = toggles
-		group_id = general
-		default_value = 0
-	}
-	cmm_sync_bool_alias = {
-		setting = glorpui__useDefaultIconsLeftPanel
-		alias = useDefaultIconsLeftPanel
-	}
-
-	cmm_register_bool_setting = {
-		mod_id = glorpui
 		setting_id = disableLeftPanelStatsBar
 		tab_id = toggles
-		group_id = general
+		group_id = leftpanel
 		default_value = 1
 	}
 	cmm_sync_bool_alias_inverted = {
 		setting = glorpui__disableLeftPanelStatsBar
 		alias = disableLeftPanelStatsBar
+	}
+
+	## Right Panel (rightpanel) Group
+	cmm_register_bool_setting = {
+		mod_id = glorpui
+		setting_id = useDefaultIconsBGRightPanel
+		tab_id = toggles
+		group_id = rightpanel
+		default_value = 0
+	}
+	cmm_sync_bool_alias = {
+		setting = glorpui__useDefaultIconsBGRightPanel
+		alias = useDefaultIconsRightPanel
+	}
+
+	## Other (other) Group
+	cmm_register_bool_setting = {
+		mod_id = glorpui
+		setting_id = showUnavailableSocietalValueSuggestions
+		tab_id = toggles
+		group_id = other
+		default_value = 0
+	}
+	cmm_sync_bool_alias = {
+		setting = glorpui__showUnavailableSocietalValueSuggestions
+		alias = showUnavailableSocietalValueSuggestions
 	}
 
 	# Top Bar (top_bar) Tab
@@ -158,7 +184,7 @@ glorpui_register_cmf_mod = {
 		setting_id = dynamicWarStats
 		tab_id = top_bar
 		group_id = general
-		default_value = 0
+		default_value = 1
 	}
 	cmm_sync_bool_alias = {
 		setting = glorpui__dynamicWarStats
@@ -169,22 +195,10 @@ glorpui_register_cmf_mod = {
 	## General (general) Group
 	cmm_register_bool_setting = {
 		mod_id = glorpui
-		setting_id = disableColouredMapmodeButtons
-		tab_id = mapmodes_bar
-		group_id = general
-		default_value = 1
-	}
-	cmm_sync_bool_alias_inverted = {
-		setting = glorpui__disableColouredMapmodeButtons
-		alias = disableColouredMapmodeButtons
-	}
-
-	cmm_register_bool_setting = {
-		mod_id = glorpui
 		setting_id = vanillaMapmodeWidth
 		tab_id = mapmodes_bar
 		group_id = general
-		default_value = 0
+		default_value = 1
 	}
 	cmm_sync_bool_alias = {
 		setting = glorpui__vanillaMapmodeWidth
@@ -203,13 +217,25 @@ glorpui_register_cmf_mod = {
 		alias = vanillaMapmodeHeight
 	}
 
+	cmm_register_bool_setting = {
+		mod_id = glorpui
+		setting_id = disableColouredMapmodeButtons
+		tab_id = mapmodes_bar
+		group_id = general
+		default_value = 1
+	}
+	cmm_sync_bool_alias_inverted = {
+		setting = glorpui__disableColouredMapmodeButtons
+		alias = disableColouredMapmodeButtons
+	}
+
 	# Build Panel (build_panel) Tab
-	## General (general) Group
+	## Return on Investment (roi) Group
 	cmm_register_dropdown_setting = {
 		mod_id = glorpui
 		setting_id = roi_metric
 		tab_id = build_panel
-		group_id = general
+		group_id = roi
 		default_index = 1
 		option_count = 2
 	}
@@ -226,7 +252,7 @@ glorpui_register_cmf_mod = {
 		mod_id = glorpui
 		setting_id = roi_unit
 		tab_id = build_panel
-		group_id = general
+		group_id = roi
 		default_index = 1
 		option_count = 2
 	}
@@ -247,23 +273,11 @@ glorpui_handle_cmf_callback = {
 	switch = {
 		trigger = var:cmf_callback
 		# Toggles (toggles) Tab
-		## General (general) Group
+		## Left Panel (leftpanel) Group
 		flag:glorpui__useVanillaPortrait = {
 			cmm_sync_bool_alias = {
 				setting = glorpui__useVanillaPortrait
 				alias = useVanillaPortrait
-			}
-		}
-		flag:glorpui__useStaticFlag = {
-			cmm_sync_bool_alias = {
-				setting = glorpui__useStaticFlag
-				alias = useStaticFlag
-			}
-		}
-		flag:glorpui__useFramedStaticFlag = {
-			cmm_sync_bool_alias_inverted = {
-				setting = glorpui__useFramedStaticFlag
-				alias = useFramedStaticFlag
 			}
 		}
 		flag:glorpui__useDefaultIconsBGLeftPanel = {
@@ -278,10 +292,36 @@ glorpui_handle_cmf_callback = {
 				alias = useDefaultIconsLeftPanel
 			}
 		}
+		flag:glorpui__useStaticFlag = {
+			cmm_sync_bool_alias = {
+				setting = glorpui__useStaticFlag
+				alias = useStaticFlag
+			}
+		}
+		flag:glorpui__useFramedStaticFlag = {
+			cmm_sync_bool_alias_inverted = {
+				setting = glorpui__useFramedStaticFlag
+				alias = useFramedStaticFlag
+			}
+		}
 		flag:glorpui__disableLeftPanelStatsBar = {
 			cmm_sync_bool_alias_inverted = {
 				setting = glorpui__disableLeftPanelStatsBar
 				alias = disableLeftPanelStatsBar
+			}
+		}
+		## Right Panel (rightpanel) Group
+		flag:glorpui__useDefaultIconsBGRightPanel = {
+			cmm_sync_bool_alias = {
+				setting = glorpui__useDefaultIconsBGRightPanel
+				alias = useDefaultIconsRightPanel
+			}
+		}
+		## Other (other) Group
+		flag:glorpui__showUnavailableSocietalValueSuggestions = {
+			cmm_sync_bool_alias = {
+				setting = glorpui__showUnavailableSocietalValueSuggestions
+				alias = showUnavailableSocietalValueSuggestions
 			}
 		}
 		# Top Bar (top_bar) Tab
@@ -330,12 +370,6 @@ glorpui_handle_cmf_callback = {
 		}
 		# Mapmodes (mapmodes_bar) Tab
 		## General (general) Group
-		flag:glorpui__disableColouredMapmodeButtons = {
-			cmm_sync_bool_alias_inverted = {
-				setting = glorpui__disableColouredMapmodeButtons
-				alias = disableColouredMapmodeButtons
-			}
-		}
 		flag:glorpui__vanillaMapmodeWidth = {
 			cmm_sync_bool_alias = {
 				setting = glorpui__vanillaMapmodeWidth
@@ -348,8 +382,14 @@ glorpui_handle_cmf_callback = {
 				alias = vanillaMapmodeHeight
 			}
 		}
+		flag:glorpui__disableColouredMapmodeButtons = {
+			cmm_sync_bool_alias_inverted = {
+				setting = glorpui__disableColouredMapmodeButtons
+				alias = disableColouredMapmodeButtons
+			}
+		}
 		# Build Panel (build_panel) Tab
-		## General (general) Group
+		## Return on Investment (roi) Group
 		flag:glorpui__roi_metric = {
 			cmm_sync_dropdown_option_alias = {
 				setting = glorpui__roi_metric

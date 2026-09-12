@@ -92,3 +92,6 @@
  game_concept_glorpui_banner_logo_desc: ""
  game_concept_glorpui_banner_background: ""
  game_concept_glorpui_banner_background_desc: ""
+ glorpui__showUnavailableSocietalValueSuggestions_name: "사회적 가치 확산을 위한 ‘사용 불가’ 제안 표시 (바닐라)"
+ glorpui__showUnavailableSocietalValueSuggestions_desc: "‘사회적 가치’ 툴팁에는 해당 가치를 높이는 모든 정부 개혁, 법률 및 영지 특권이 나열되어 있으며, 아직 획득할 수 없는 항목도 포함됩니다. ‘꺼짐’ 상태에서는 현재 획득할 수 있는 항목만 표시됩니다."
+ glorpui__showUnavailableSocietalValueSuggestions: "glorpui__showUnavailableSocietalValueSuggestions"

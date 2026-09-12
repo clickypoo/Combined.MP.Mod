@@ -159,6 +159,60 @@ ht_add_war_exhaustion_effect = {
 	scope:actor = { cmf_log_with_scope_arg = { action = ht_log_changed_war_exhaustion } }
 }
 
+# Two-target: recipient = casus belli holder, target = who it is against
+ht_add_casus_belli_effect = {
+	set_local_variable = { name = ht_cb_cost value = 100 }
+	change_local_variable = { name = ht_cb_cost subtract = "global_variable_map(cmm|flag:ht__casus_belli_discount)" }
+	round_local_variable = { name = ht_cb_cost nearest = 5 }
+	clamp_local_variable = { name = ht_cb_cost min = 0 max = 200 }
+	scope:recipient = {
+		if = { limit = { local_var:ht_cb_cost = 0 } add_casus_belli = { target = scope:target type = casus_belli:ht_cb_cost_0 } }
+		if = { limit = { local_var:ht_cb_cost = 5 } add_casus_belli = { target = scope:target type = casus_belli:ht_cb_cost_5 } }
+		if = { limit = { local_var:ht_cb_cost = 10 } add_casus_belli = { target = scope:target type = casus_belli:ht_cb_cost_10 } }
+		if = { limit = { local_var:ht_cb_cost = 15 } add_casus_belli = { target = scope:target type = casus_belli:ht_cb_cost_15 } }
+		if = { limit = { local_var:ht_cb_cost = 20 } add_casus_belli = { target = scope:target type = casus_belli:ht_cb_cost_20 } }
+		if = { limit = { local_var:ht_cb_cost = 25 } add_casus_belli = { target = scope:target type = casus_belli:ht_cb_cost_25 } }
+		if = { limit = { local_var:ht_cb_cost = 30 } add_casus_belli = { target = scope:target type = casus_belli:ht_cb_cost_30 } }
+		if = { limit = { local_var:ht_cb_cost = 35 } add_casus_belli = { target = scope:target type = casus_belli:ht_cb_cost_35 } }
+		if = { limit = { local_var:ht_cb_cost = 40 } add_casus_belli = { target = scope:target type = casus_belli:ht_cb_cost_40 } }
+		if = { limit = { local_var:ht_cb_cost = 45 } add_casus_belli = { target = scope:target type = casus_belli:ht_cb_cost_45 } }
+		if = { limit = { local_var:ht_cb_cost = 50 } add_casus_belli = { target = scope:target type = casus_belli:ht_cb_cost_50 } }
+		if = { limit = { local_var:ht_cb_cost = 55 } add_casus_belli = { target = scope:target type = casus_belli:ht_cb_cost_55 } }
+		if = { limit = { local_var:ht_cb_cost = 60 } add_casus_belli = { target = scope:target type = casus_belli:ht_cb_cost_60 } }
+		if = { limit = { local_var:ht_cb_cost = 65 } add_casus_belli = { target = scope:target type = casus_belli:ht_cb_cost_65 } }
+		if = { limit = { local_var:ht_cb_cost = 70 } add_casus_belli = { target = scope:target type = casus_belli:ht_cb_cost_70 } }
+		if = { limit = { local_var:ht_cb_cost = 75 } add_casus_belli = { target = scope:target type = casus_belli:ht_cb_cost_75 } }
+		if = { limit = { local_var:ht_cb_cost = 80 } add_casus_belli = { target = scope:target type = casus_belli:ht_cb_cost_80 } }
+		if = { limit = { local_var:ht_cb_cost = 85 } add_casus_belli = { target = scope:target type = casus_belli:ht_cb_cost_85 } }
+		if = { limit = { local_var:ht_cb_cost = 90 } add_casus_belli = { target = scope:target type = casus_belli:ht_cb_cost_90 } }
+		if = { limit = { local_var:ht_cb_cost = 95 } add_casus_belli = { target = scope:target type = casus_belli:ht_cb_cost_95 } }
+		if = { limit = { local_var:ht_cb_cost = 100 } add_casus_belli = { target = scope:target type = casus_belli:ht_cb_cost_100 } }
+		if = { limit = { local_var:ht_cb_cost = 105 } add_casus_belli = { target = scope:target type = casus_belli:ht_cb_cost_105 } }
+		if = { limit = { local_var:ht_cb_cost = 110 } add_casus_belli = { target = scope:target type = casus_belli:ht_cb_cost_110 } }
+		if = { limit = { local_var:ht_cb_cost = 115 } add_casus_belli = { target = scope:target type = casus_belli:ht_cb_cost_115 } }
+		if = { limit = { local_var:ht_cb_cost = 120 } add_casus_belli = { target = scope:target type = casus_belli:ht_cb_cost_120 } }
+		if = { limit = { local_var:ht_cb_cost = 125 } add_casus_belli = { target = scope:target type = casus_belli:ht_cb_cost_125 } }
+		if = { limit = { local_var:ht_cb_cost = 130 } add_casus_belli = { target = scope:target type = casus_belli:ht_cb_cost_130 } }
+		if = { limit = { local_var:ht_cb_cost = 135 } add_casus_belli = { target = scope:target type = casus_belli:ht_cb_cost_135 } }
+		if = { limit = { local_var:ht_cb_cost = 140 } add_casus_belli = { target = scope:target type = casus_belli:ht_cb_cost_140 } }
+		if = { limit = { local_var:ht_cb_cost = 145 } add_casus_belli = { target = scope:target type = casus_belli:ht_cb_cost_145 } }
+		if = { limit = { local_var:ht_cb_cost = 150 } add_casus_belli = { target = scope:target type = casus_belli:ht_cb_cost_150 } }
+		if = { limit = { local_var:ht_cb_cost = 155 } add_casus_belli = { target = scope:target type = casus_belli:ht_cb_cost_155 } }
+		if = { limit = { local_var:ht_cb_cost = 160 } add_casus_belli = { target = scope:target type = casus_belli:ht_cb_cost_160 } }
+		if = { limit = { local_var:ht_cb_cost = 165 } add_casus_belli = { target = scope:target type = casus_belli:ht_cb_cost_165 } }
+		if = { limit = { local_var:ht_cb_cost = 170 } add_casus_belli = { target = scope:target type = casus_belli:ht_cb_cost_170 } }
+		if = { limit = { local_var:ht_cb_cost = 175 } add_casus_belli = { target = scope:target type = casus_belli:ht_cb_cost_175 } }
+		if = { limit = { local_var:ht_cb_cost = 180 } add_casus_belli = { target = scope:target type = casus_belli:ht_cb_cost_180 } }
+		if = { limit = { local_var:ht_cb_cost = 185 } add_casus_belli = { target = scope:target type = casus_belli:ht_cb_cost_185 } }
+		if = { limit = { local_var:ht_cb_cost = 190 } add_casus_belli = { target = scope:target type = casus_belli:ht_cb_cost_190 } }
+		if = { limit = { local_var:ht_cb_cost = 195 } add_casus_belli = { target = scope:target type = casus_belli:ht_cb_cost_195 } }
+		if = { limit = { local_var:ht_cb_cost = 200 } add_casus_belli = { target = scope:target type = casus_belli:ht_cb_cost_200 } }
+	}
+	scope:recipient = { save_scope_as = cmf_log_arg1 }
+	scope:target = { save_scope_as = cmf_log_arg2 }
+	scope:actor = { cmf_log_with_scope_args = { action = ht_log_added_casus_belli } }
+}
+
 # ── Country Management Effects (mixed single/two-target) ───────────────────────
 
 # Two-target: recipient = annexer, target = annexed
@@ -236,6 +290,13 @@ ht_end_regency_effect = {
 	}
 	scope:recipient = { save_scope_as = cmf_log_arg2 }
 	scope:actor = { cmf_log_with_scope_arg = { action = ht_log_ended_regency } }
+}
+
+# Single-target: recipient = country whose parliament is called
+ht_call_parliament_effect = {
+	scope:recipient = { start_parliament_effect = yes }
+	scope:recipient = { save_scope_as = cmf_log_arg2 }
+	scope:actor = { cmf_log_with_scope_arg = { action = ht_log_called_parliament } }
 }
 
 # Two-target: recipient = source country, target = country to change
@@ -319,5 +380,142 @@ ht_assimilate_pops_effect = {
 		}
 	}
 	scope:recipient = { save_scope_as = cmf_log_arg2 }
-	scope:actor = { cmf_log_with_scope_arg = { action = ht_log_converted_pops } }
+	scope:actor = { cmf_log_with_scope_arg = { action = ht_log_assimilated_pops } }
+}
+
+# -- Give Land Effects ---------------------------------------------------------
+
+ht_give_land_location_sources = {
+	$receiver$ = {
+		every_owned_location = {
+			every_neighbor_location = {
+				limit = {
+					is_ownable = yes
+					has_owner = yes
+					NOT = { owner ?= $receiver$ }
+				}
+				add_to_list = source
+			}
+		}
+	}
+}
+
+ht_give_land_province_sources = {
+	$receiver$ = {
+		every_owned_location = {
+			every_neighbor_location = {
+				limit = {
+					is_ownable = yes
+					has_owner = yes
+					NOT = { owner ?= $receiver$ }
+				}
+				province = { add_to_list = source }
+			}
+		}
+	}
+}
+
+# The receiver's own areas go in too, since they can still hold foreign land.
+ht_give_land_area_sources = {
+	$receiver$ = {
+		every_area_with_owned_province = {
+			every_neighbor_area = {
+				add_to_list = source
+			}
+			add_to_list = source
+		}
+	}
+}
+
+ht_transfer_location_to_receiver = {
+	$target_location$ = {
+		change_location_owner = $receiver$
+		change_integration_level = integrated
+	}
+}
+
+ht_give_location_effect = {
+	ht_transfer_location_to_receiver = {
+		receiver = $receiver$
+		target_location = $target_location$
+	}
+	$receiver$ = { save_scope_as = cmf_log_arg2 }
+	scope:actor = { cmf_log_with_scope_arg = { action = ht_log_gave_location } }
+}
+
+ht_give_province_effect = {
+	$target_province$ = {
+		every_location_in_province = {
+			limit = {
+				is_ownable = yes
+				has_owner = yes
+			}
+			ht_transfer_location_to_receiver = {
+				receiver = $receiver$
+				target_location = this
+			}
+		}
+	}
+	$receiver$ = { save_scope_as = cmf_log_arg2 }
+	scope:actor = { cmf_log_with_scope_arg = { action = ht_log_gave_province } }
+}
+
+ht_give_area_effect = {
+	$target_area$ = {
+		every_location_in_area = {
+			limit = {
+				is_ownable = yes
+				has_owner = yes
+			}
+			ht_transfer_location_to_receiver = {
+				receiver = $receiver$
+				target_location = this
+			}
+		}
+	}
+	$receiver$ = { save_scope_as = cmf_log_arg2 }
+	scope:actor = { cmf_log_with_scope_arg = { action = ht_log_gave_area } }
+}
+
+# Runs the transfer for the size picked in ht_give_land.
+ht_run_give_land = {
+	if = {
+		limit = { exists = scope:ht_size_choice }
+
+		if = {
+			limit = { scope:ht_size_choice = situation:ht_size_location }
+			ht_give_location_effect = {
+				receiver = scope:actor.var:ht_land_receiver
+				target_location = scope:ht_target_location
+			}
+			fire_generic_action = {
+				type = ht_give_land_location_action
+				actor = scope:actor
+			}
+		}
+
+		if = {
+			limit = { scope:ht_size_choice = situation:ht_size_province }
+			ht_give_province_effect = {
+				receiver = scope:actor.var:ht_land_receiver
+				target_province = scope:ht_target_province
+			}
+			fire_generic_action = {
+				type = ht_give_land_province_action
+				actor = scope:actor
+			}
+		}
+
+		if = {
+			limit = { scope:ht_size_choice = situation:ht_size_area }
+			ht_give_area_effect = {
+				receiver = scope:actor.var:ht_land_receiver
+				target_area = scope:ht_target_area
+			}
+			fire_generic_action = {
+				type = ht_give_land_area_action
+				actor = scope:actor
+			}
+		}
+	}
 }

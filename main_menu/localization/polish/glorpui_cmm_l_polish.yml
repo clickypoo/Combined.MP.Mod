@@ -92,3 +92,6 @@
  game_concept_glorpui_banner_logo_desc: ""
  game_concept_glorpui_banner_background: ""
  game_concept_glorpui_banner_background_desc: ""
+ glorpui__showUnavailableSocietalValueSuggestions_name: "Pokaż niedostępne sugestie dotyczące promowania wartości społecznych (Vanilla)"
+ glorpui__showUnavailableSocietalValueSuggestions_desc: "W opisach wartości społecznych wymieniono wszystkie reformy rządowe, ustawy i przywileje majątkowe, które wpływają na tę wartość, w tym te, z których nie można jeszcze skorzystać. Gdy opcja jest wyłączona, wyświetlane są tylko te, z których można skorzystać już teraz."
+ glorpui__showUnavailableSocietalValueSuggestions: "glorpui__showUnavailableSocietalValueSuggestions"

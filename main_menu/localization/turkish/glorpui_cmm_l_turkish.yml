@@ -92,3 +92,6 @@
  game_concept_glorpui_banner_logo_desc: ""
  game_concept_glorpui_banner_background: ""
  game_concept_glorpui_banner_background_desc: ""
+ glorpui__showUnavailableSocietalValueSuggestions_name: "Toplumsal Değerleri Teşvik Etmek İçin Kullanılamayan Önerileri Göster (Vanilla)"
+ glorpui__showUnavailableSocietalValueSuggestions_desc: "Toplumsal değer araç ipuçları, bu değeri artıran her türlü hükümet reformunu, yasayı ve mülkiyet ayrıcalığını listeler; bunlara henüz elde edemeyeceğinizler de dahildir. Kapalı konumdayken ise yalnızca şu anda elde edebileceğinizler listelenir."
+ glorpui__showUnavailableSocietalValueSuggestions: "glorpui__showUnavailableSocietalValueSuggestions"

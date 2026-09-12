@@ -8,6 +8,7 @@ glorpui_cmf_suppress = {
 		set_variable = { name = cmf_callback value = flag:glorpui__useDefaultIconsBGLeftPanel }
 		set_variable = { name = cmf_callback value = flag:glorpui__useDefaultIconsLeftPanel }
 		set_variable = { name = cmf_callback value = flag:glorpui__disableLeftPanelStatsBar }
+		set_variable = { name = cmf_callback value = flag:glorpui__showUnavailableSocietalValueSuggestions }
 		set_variable = { name = cmf_callback value = flag:glorpui__disableColouredMapmodeButtons }
 		set_variable = { name = cmf_callback value = flag:glorpui__vanillaMapmodeWidth }
 		set_variable = { name = cmf_callback value = flag:glorpui__vanillaMapmodeHeight }
@@ -20,5 +21,6 @@ glorpui_cmf_suppress = {
 		set_variable = { name = cmf_callback value = flag:glorpui__dynamicWarStats }
 		set_variable = { name = cmf_callback value = flag:glorpui__roi_metric }
 		set_variable = { name = cmf_callback value = flag:glorpui__roi_unit }
+		add_to_global_variable_list = { name = cmf_active_mod_ids target = flag:cm }
 	}
-}
+}

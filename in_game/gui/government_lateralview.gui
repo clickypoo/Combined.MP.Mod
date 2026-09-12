@@ -2670,7 +2670,6 @@ lateralview = {
 								expand = {}
 								# Heir
 								vbox = {
-									datacontext = "[ForeignCountryView.GetHeirSelection]"
 									visible = "[And(Country.GetGovernment.CareAboutProducingHeirs, Country.GetGovernment.HasConsort)]"
 									layoutpolicy_vertical = expanding
 									expand = {}
@@ -2791,7 +2790,7 @@ lateralview = {
 												margin_right = 5
 											}
 											blockoverride "banner_button_margin" { margin = { 2 8 } }
-											blockoverride "banner_button_color" { modify_texture = { using = color_mid_green_texture } }
+											blockoverride "banner_button_color" { modify_texture = { using = color_mid_yellow_texture } }
 										}
 										# Dip
 										hbox = {
@@ -3107,7 +3106,7 @@ lateralview = {
 								}
 								#HEGEMONIES
 								HegemoyBanner = {
-									datacontext = "[ForeignCountryView.GetCountry]"
+									datacontext = "[Player]"
 								}
 							}
 							expand = {}

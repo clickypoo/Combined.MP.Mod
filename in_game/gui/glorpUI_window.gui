@@ -170,6 +170,19 @@
                             }
                         }
 
+                        # Societal Values - Show Unavailable Suggestions
+                        hbox = {
+                            spacing = 10
+                            text_single = {
+                                text = "glorpui__showUnavailableSocietalValueSuggestions_name"
+                            }
+                            checkbox_square_alt = {
+                                onclick = "[GetScriptedGui('SetShowUnavailableSocietalValueSuggestions').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+                                down =  "[Player.MakeScope.GetVariable('showUnavailableSocietalValueSuggestions').IsSet]"
+                                tooltip_enabled = no
+                            }
+                        }
+
                         # Close button
                         # hbox = {
                         #     parentanchor = bottom|nobaseline

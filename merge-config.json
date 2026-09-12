@@ -1,0 +1,10 @@
+{
+	"mods": [
+		{"folder": ["community-mod-framework", "3692202776"], "name": "Community Mod Framework", "link": "https://steamcommunity.com/sharedfiles/filedetails/?id=3692202776"},
+		{"folder": ["eu5-host-tool", "3753299425"], "name": "Host Tool", "link": "https://steamcommunity.com/sharedfiles/filedetails/?id=3753299425"},
+		{"folder": ["EU5.Glorp.UI", "3601047146"], "name": "Glorp UI", "link": "https://steamcommunity.com/sharedfiles/filedetails/?id=3601047146"},
+		{"folder": ["eu5-faster-universalis", "3662193478"], "name": "Faster Universalis", "link": "https://steamcommunity.com/sharedfiles/filedetails/?id=3662193478"},
+		{"folder": ["eu5-faster-universalis/submods/faster_universalis_24_hour_tick", "faster_universalis_24_hour_tick", "3662933683"], "name": "Faster Universalis: Daily Tick Submod", "link": "https://steamcommunity.com/sharedfiles/filedetails/?id=3662933683"},
+		{"folder": ["3617910693"], "name": "Sulphur's Rivers Expanded", "link": "https://steamcommunity.com/sharedfiles/filedetails/?id=3617910693"}
+	]
+}

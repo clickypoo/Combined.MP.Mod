@@ -1,0 +1,150 @@
+﻿# Repeat picks for Give Land. The receiver comes from var:ht_land_receiver because a generic
+# action has no recipient country scope.
+
+ht_give_land_location_action = {
+	type = owncountry
+	show_message = no
+	show_message_to_target = no
+	show_in_gui_list = no
+	ai_tick = never
+	automation_tick = never
+
+	potential = {
+		scope:actor = { cmf_can_use_unrestricted_tools = yes }
+	}
+
+	allow = { }
+
+	select_trigger = {
+		looking_for_a = location
+		target_flag = ht_target_location
+		source_flags = only_actual_locations
+		name = ht_select_location_to_give
+		none_available_msg_key = ht_no_valid_locations
+
+		interaction_source_list = {
+			ht_give_land_location_sources = { receiver = scope:actor.var:ht_land_receiver }
+		}
+
+		column = { data = name }
+		column = { data = population }
+
+		visible = {
+			ht_can_give_location = { receiver = scope:actor.var:ht_land_receiver }
+		}
+	}
+
+	effect = {
+		if = {
+			limit = { exists = scope:ht_target_location }
+			ht_give_location_effect = {
+				receiver = scope:actor.var:ht_land_receiver
+				target_location = scope:ht_target_location
+			}
+			hidden_effect = {
+				fire_generic_action = {
+					type = ht_give_land_location_action
+					actor = scope:actor
+				}
+			}
+		}
+	}
+}
+
+ht_give_land_province_action = {
+	type = owncountry
+	show_message = no
+	show_message_to_target = no
+	show_in_gui_list = no
+	ai_tick = never
+	automation_tick = never
+
+	potential = {
+		scope:actor = { cmf_can_use_unrestricted_tools = yes }
+	}
+
+	allow = { }
+
+	select_trigger = {
+		looking_for_a = province
+		target_flag = ht_target_province
+		name = ht_select_province_to_give
+		none_available_msg_key = ht_no_valid_provinces
+
+		interaction_source_list = {
+			ht_give_land_province_sources = { receiver = scope:actor.var:ht_land_receiver }
+		}
+
+		column = { data = name }
+		column = { data = population }
+
+		visible = {
+			ht_can_give_province = { receiver = scope:actor.var:ht_land_receiver }
+		}
+	}
+
+	effect = {
+		if = {
+			limit = { exists = scope:ht_target_province }
+			ht_give_province_effect = {
+				receiver = scope:actor.var:ht_land_receiver
+				target_province = scope:ht_target_province
+			}
+			hidden_effect = {
+				fire_generic_action = {
+					type = ht_give_land_province_action
+					actor = scope:actor
+				}
+			}
+		}
+	}
+}
+
+ht_give_land_area_action = {
+	type = owncountry
+	show_message = no
+	show_message_to_target = no
+	show_in_gui_list = no
+	ai_tick = never
+	automation_tick = never
+
+	potential = {
+		scope:actor = { cmf_can_use_unrestricted_tools = yes }
+	}
+
+	allow = { }
+
+	select_trigger = {
+		looking_for_a = area
+		target_flag = ht_target_area
+		name = ht_select_area_to_give
+		none_available_msg_key = ht_no_valid_areas
+
+		interaction_source_list = {
+			ht_give_land_area_sources = { receiver = scope:actor.var:ht_land_receiver }
+		}
+
+		column = { data = name }
+		column = { data = population }
+
+		visible = {
+			ht_can_give_area = { receiver = scope:actor.var:ht_land_receiver }
+		}
+	}
+
+	effect = {
+		if = {
+			limit = { exists = scope:ht_target_area }
+			ht_give_area_effect = {
+				receiver = scope:actor.var:ht_land_receiver
+				target_area = scope:ht_target_area
+			}
+			hidden_effect = {
+				fire_generic_action = {
+					type = ht_give_land_area_action
+					actor = scope:actor
+				}
+			}
+		}
+	}
+}

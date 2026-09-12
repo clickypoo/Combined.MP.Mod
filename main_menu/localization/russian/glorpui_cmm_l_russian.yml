@@ -92,3 +92,6 @@
  game_concept_glorpui_banner_logo_desc: ""
  game_concept_glorpui_banner_background: ""
  game_concept_glorpui_banner_background_desc: ""
+ glorpui__showUnavailableSocietalValueSuggestions_name: "Показать недоступные предложения по продвижению общественных ценностей (Vanilla)"
+ glorpui__showUnavailableSocietalValueSuggestions_desc: "В подсказках по общественной ценности перечислены все государственные реформы, законы и привилегии, влияющие на ценность, включая те, которыми вы пока не можете воспользоваться. Если этот параметр отключен, в списке отображаются только те элементы, которыми вы можете воспользоваться прямо сейчас."
+ glorpui__showUnavailableSocietalValueSuggestions: "glorpui__showUnavailableSocietalValueSuggestions"

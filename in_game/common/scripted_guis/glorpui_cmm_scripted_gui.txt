@@ -1,6 +1,6 @@
 ﻿#noinspection ALL
 # Toggles (toggles) Tab
-## General (general) Group
+## Left Panel (leftpanel) Group
 glorpui__useFramedStaticFlag_on_changed = {
 	scope = country
 

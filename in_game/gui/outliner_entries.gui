@@ -2816,6 +2816,9 @@ OutlinerEntryBase = {
 		OutlinerButtonBase = {
 			size = { 95% 100% }
 
+			# Doesn't work.. Why? Tried lots of different datacontexts, no luck
+			# GlorpUIArmyMarkerIcon = {}
+
 			hbox = {
 				using = outliner_entry_margin
 				spacing = 5

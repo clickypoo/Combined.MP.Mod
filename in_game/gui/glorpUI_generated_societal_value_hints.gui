@@ -3,7 +3,21 @@
 template SocietalValueCountryLeft_tooltip {
 	using = SocietalValueLeft_tooltip
 	blockoverride "societal_value_left_tooltip_extra" {
-		# GlorpUI: C++ GetLeftHint blob replaced with per-axis hint lists filtered to takeable suggestions.
+		# GlorpUI: C++ GetLeftHint blob kept behind a setting, per-axis lists filtered to takeable suggestions otherwise.
+		TooltipScrolledStringPairList = {
+			visible = "[Player.MakeScope.GetVariable('showUnavailableSocietalValueSuggestions').IsSet]"
+			blockoverride "block_scrollarea" {
+				maximumsize = { -1 160 }
+			}
+
+			blockoverride "block_title" {
+				text = "TO_MOVE_FURTHER_TO_LEFT"
+				default_format = "#help"
+			}
+
+			textcontext = "[SocietalValue.GetLeftHint(Player.Self)]"
+		}
+
 		TooltipScrolledStringPairList = {
 			visible = "[GreaterThan_CFixedPoint(GuiScope.AddScope('glorpui_sv', SocietalValue.MakeScope).AddScope('glorpui_country', Player.MakeScope).ScriptValue('glorpui_svh_visible_centralization'), '(CFixedPoint)0')]"
 			blockoverride "block_scrollarea" {
@@ -247,7 +261,21 @@ template SocietalValueCountryLeft_tooltip {
 template SocietalValueCountryRight_tooltip {
 	using = SocietalValueRight_tooltip
 	blockoverride "societal_value_right_tooltip_extra" {
-		# GlorpUI: C++ GetRightHint blob replaced with per-axis hint lists filtered to takeable suggestions.
+		# GlorpUI: C++ GetRightHint blob kept behind a setting, per-axis lists filtered to takeable suggestions otherwise.
+		TooltipScrolledStringPairList = {
+			visible = "[Player.MakeScope.GetVariable('showUnavailableSocietalValueSuggestions').IsSet]"
+			blockoverride "block_scrollarea" {
+				maximumsize = { -1 160 }
+			}
+
+			blockoverride "block_title" {
+				text = "TO_MOVE_FURTHER_TO_RIGHT"
+				default_format = "#help"
+			}
+
+			textcontext = "[SocietalValue.GetRightHint(Player.Self)]"
+		}
+
 		TooltipScrolledStringPairList = {
 			visible = "[GreaterThan_CFixedPoint(GuiScope.AddScope('glorpui_sv', SocietalValue.MakeScope).AddScope('glorpui_country', Player.MakeScope).ScriptValue('glorpui_svh_visible_decentralization'), '(CFixedPoint)0')]"
 			blockoverride "block_scrollarea" {

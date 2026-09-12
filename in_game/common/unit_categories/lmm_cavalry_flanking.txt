@@ -1,0 +1,9 @@
+﻿# Cavalry flanking nerf. Vanilla: light 2.1, heavy 2.0.
+
+INJECT:army_light_cavalry = {
+	flanking_ability = 1.6
+}
+
+INJECT:army_heavy_cavalry = {
+	flanking_ability = 1.6
+}

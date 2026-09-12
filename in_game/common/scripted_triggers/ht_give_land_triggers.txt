@@ -1,0 +1,22 @@
+﻿# ROOT: location. ARGS: $receiver$:country
+ht_can_give_location = {
+	has_owner = yes
+	NOT = { owner ?= $receiver$ }
+	any_coast_border_location = {
+		owner ?= $receiver$
+	}
+}
+
+# ROOT: province. ARGS: $receiver$:country
+ht_can_give_province = {
+	any_location_in_province = {
+		ht_can_give_location = { receiver = $receiver$ }
+	}
+}
+
+# ROOT: area. ARGS: $receiver$:country
+ht_can_give_area = {
+	any_location_in_area = {
+		ht_can_give_location = { receiver = $receiver$ }
+	}
+}

@@ -92,3 +92,6 @@
  game_concept_glorpui_banner_logo_desc: ""
  game_concept_glorpui_banner_background: ""
  game_concept_glorpui_banner_background_desc: ""
+ glorpui__showUnavailableSocietalValueSuggestions_name: "Afficher les suggestions non disponibles pour promouvoir les valeurs sociétales (Vanilla)"
+ glorpui__showUnavailableSocietalValueSuggestions_desc: "Les infobulles sur la valeur sociétale répertorient toutes les réformes gouvernementales, lois et privilèges successoraux qui font augmenter cette valeur, y compris ceux dont vous ne pouvez pas encore bénéficier. Par défaut, elles n'affichent que ceux dont vous pouvez bénéficier dès maintenant."
+ glorpui__showUnavailableSocietalValueSuggestions: "glorpui__showUnavailableSocietalValueSuggestions"

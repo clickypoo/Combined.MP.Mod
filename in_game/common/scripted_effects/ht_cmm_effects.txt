@@ -100,6 +100,17 @@ ht_register_cmf_mod = {
 		max_value = 100
 		step_value = 1
 	}
+
+	cmm_register_global_numeric_setting = {
+		mod_id = ht
+		setting_id = casus_belli_discount
+		tab_id = settings
+		group_id = amounts
+		default_value = 50
+		min_value = -100
+		max_value = 100
+		step_value = 5
+	}
 }
 
 # Callback handler for cmf_on_callback.

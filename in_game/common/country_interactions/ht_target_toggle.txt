@@ -4,6 +4,8 @@
 	ai_tick = never
 	use_enroute = no
 	block_when_at_war = no
+	show_message = no
+	show_message_to_target = no
 
 	potential = {
 		scope:actor = { cmf_can_use_unrestricted_tools = yes }

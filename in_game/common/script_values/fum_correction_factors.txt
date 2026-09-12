@@ -1,12 +1,14 @@
-﻿# Vanilla tick rate, so none of these corrections apply.
+﻿# A tick never spans more than a day at this rate, so no day ticks are skipped.
 fum_day_skip_delta = {
 	value = 0
 }
 
+# HOUR_TICK / 2 - 1. Per-tick rates fire 12x less often than on vanilla's 2-hour tick.
 fum_tick_ratio_delta = {
-	value = 0
+	value = 11
 }
 
+# 4.54 / 12 - 1. Combat is 4.54x faster per tick and a tick is a whole day, so a battle spans 12/4.54 the day ticks of vanilla.
 fum_battle_day_tick_delta = {
-	value = 0
+	value = -0.62167
 }

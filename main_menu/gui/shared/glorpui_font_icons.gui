@@ -27,3 +27,43 @@ texticon = {
 		fontsize = 16
 	}
 }
+
+texticon = {
+	icon = spring
+	iconsize = {
+		texture = "gfx/interface/icons/seasons/spring.dds"
+		size = { 24 24 }
+		offset = { 0 6 }
+		fontsize = 18
+	}
+}
+
+texticon = {
+	icon = summer
+	iconsize = {
+		texture = "gfx/interface/icons/seasons/summer.dds"
+		size = { 24 24 }
+		offset = { 0 6 }
+		fontsize = 18
+	}
+}
+
+texticon = {
+	icon = autumn
+	iconsize = {
+		texture = "gfx/interface/icons/seasons/autumn.dds"
+		size = { 24 24 }
+		offset = { 0 6 }
+		fontsize = 18
+	}
+}
+
+texticon = {
+	icon = winter
+	iconsize = {
+		texture = "gfx/interface/icons/seasons/winter.dds"
+		size = { 24 24 }
+		offset = { 0 6 }
+		fontsize = 18
+	}
+}

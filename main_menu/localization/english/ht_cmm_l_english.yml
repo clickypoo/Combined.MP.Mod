@@ -34,6 +34,9 @@
  ht__war_exhaustion_amount_name: "War Exhaustion Amount"
  ht__war_exhaustion_amount_desc: "Amount of war exhaustion the Change War Exhaustion action applies. Negative values remove it, positive values add it."
  ht__war_exhaustion_amount_format: "[CMMV('ht__war_exhaustion_amount')]"
+ ht__casus_belli_discount_name: "Casus Belli Discount"
+ ht__casus_belli_discount_desc: "How much cheaper a casus belli from the Add Casus Belli action makes the resulting peace deal. Taking land and subjects costs this much less war score. Negative values make them cost more instead."
+ ht__casus_belli_discount_format: "[CMMV('ht__casus_belli_discount')]%"
 
  # Optional: self-referencing flag keys to suppress IDE warnings (safe to remove if you want)
  ht: "ht"
@@ -48,3 +51,4 @@
  ht__religion_conversion_percentage: "ht__religion_conversion_percentage"
  ht__culture_assimilation_percentage: "ht__culture_assimilation_percentage"
  ht__war_exhaustion_amount: "ht__war_exhaustion_amount"
+ ht__casus_belli_discount: "ht__casus_belli_discount"

@@ -1,0 +1,3 @@
+﻿NCountry = {
+	ANNEX_BASE_COST = 50 # Vanilla: 200
+}

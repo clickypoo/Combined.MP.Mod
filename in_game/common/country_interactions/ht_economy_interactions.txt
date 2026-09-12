@@ -4,6 +4,8 @@
 	ai_tick = never
 	use_enroute = no
 	block_when_at_war = no
+	show_message = no
+	show_message_to_target = no
 
 	potential = {
 		scope:actor = { cmf_can_use_unrestricted_tools = yes }
@@ -32,6 +34,25 @@
 		}
 	}
 
+	select_trigger = {
+		allow_self = yes
+		looking_for_a = country
+		target_flag = recipient
+		name = ht_select_self_to_continue
+
+
+		show_if = {
+			has_global_variable = ht_target_self
+			NOT = { country_exists = scope:recipient }
+		}
+
+		column = { data = name }
+
+		visible = {
+			this = scope:actor
+		}
+	}
+
 	effect = {
 		hidden_effect = {
 			if = {
@@ -39,9 +60,7 @@
 				scope:actor = { save_scope_as = recipient }
 			}
 			if = {
-				limit = {
-					exists = scope:recipient
-				}
+				limit = { exists = scope:recipient }
 				ht_add_gold_effect = yes
 			}
 		}
@@ -54,6 +73,8 @@ ht_add_manpower = {
 	ai_tick = never
 	use_enroute = no
 	block_when_at_war = no
+	show_message = no
+	show_message_to_target = no
 
 	potential = {
 		scope:actor = { cmf_can_use_unrestricted_tools = yes }
@@ -82,6 +103,25 @@ ht_add_manpower = {
 		}
 	}
 
+	select_trigger = {
+		allow_self = yes
+		looking_for_a = country
+		target_flag = recipient
+		name = ht_select_self_to_continue
+
+
+		show_if = {
+			has_global_variable = ht_target_self
+			NOT = { country_exists = scope:recipient }
+		}
+
+		column = { data = name }
+
+		visible = {
+			this = scope:actor
+		}
+	}
+
 	effect = {
 		hidden_effect = {
 			if = {
@@ -89,9 +129,7 @@ ht_add_manpower = {
 				scope:actor = { save_scope_as = recipient }
 			}
 			if = {
-				limit = {
-					exists = scope:recipient
-				}
+				limit = { exists = scope:recipient }
 				ht_add_manpower_effect = yes
 			}
 		}
@@ -104,6 +142,8 @@ ht_add_stability = {
 	ai_tick = never
 	use_enroute = no
 	block_when_at_war = no
+	show_message = no
+	show_message_to_target = no
 
 	potential = {
 		scope:actor = { cmf_can_use_unrestricted_tools = yes }
@@ -132,6 +172,25 @@ ht_add_stability = {
 		}
 	}
 
+	select_trigger = {
+		allow_self = yes
+		looking_for_a = country
+		target_flag = recipient
+		name = ht_select_self_to_continue
+
+
+		show_if = {
+			has_global_variable = ht_target_self
+			NOT = { country_exists = scope:recipient }
+		}
+
+		column = { data = name }
+
+		visible = {
+			this = scope:actor
+		}
+	}
+
 	effect = {
 		hidden_effect = {
 			if = {
@@ -139,9 +198,7 @@ ht_add_stability = {
 				scope:actor = { save_scope_as = recipient }
 			}
 			if = {
-				limit = {
-					exists = scope:recipient
-				}
+				limit = { exists = scope:recipient }
 				ht_add_stability_effect = yes
 			}
 		}
@@ -154,6 +211,8 @@ ht_add_prestige = {
 	ai_tick = never
 	use_enroute = no
 	block_when_at_war = no
+	show_message = no
+	show_message_to_target = no
 
 	potential = {
 		scope:actor = { cmf_can_use_unrestricted_tools = yes }
@@ -182,6 +241,25 @@ ht_add_prestige = {
 		}
 	}
 
+	select_trigger = {
+		allow_self = yes
+		looking_for_a = country
+		target_flag = recipient
+		name = ht_select_self_to_continue
+
+
+		show_if = {
+			has_global_variable = ht_target_self
+			NOT = { country_exists = scope:recipient }
+		}
+
+		column = { data = name }
+
+		visible = {
+			this = scope:actor
+		}
+	}
+
 	effect = {
 		hidden_effect = {
 			if = {
@@ -189,9 +267,7 @@ ht_add_prestige = {
 				scope:actor = { save_scope_as = recipient }
 			}
 			if = {
-				limit = {
-					exists = scope:recipient
-				}
+				limit = { exists = scope:recipient }
 				ht_add_prestige_effect = yes
 			}
 		}
@@ -204,6 +280,8 @@ ht_add_diplomats = {
 	ai_tick = never
 	use_enroute = no
 	block_when_at_war = no
+	show_message = no
+	show_message_to_target = no
 
 	potential = {
 		scope:actor = { cmf_can_use_unrestricted_tools = yes }
@@ -232,6 +310,25 @@ ht_add_diplomats = {
 		}
 	}
 
+	select_trigger = {
+		allow_self = yes
+		looking_for_a = country
+		target_flag = recipient
+		name = ht_select_self_to_continue
+
+
+		show_if = {
+			has_global_variable = ht_target_self
+			NOT = { country_exists = scope:recipient }
+		}
+
+		column = { data = name }
+
+		visible = {
+			this = scope:actor
+		}
+	}
+
 	effect = {
 		hidden_effect = {
 			if = {
@@ -239,9 +336,7 @@ ht_add_diplomats = {
 				scope:actor = { save_scope_as = recipient }
 			}
 			if = {
-				limit = {
-					exists = scope:recipient
-				}
+				limit = { exists = scope:recipient }
 				ht_add_diplomats_effect = yes
 			}
 		}

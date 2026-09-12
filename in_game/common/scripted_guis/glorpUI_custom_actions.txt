@@ -326,3 +326,48 @@ SetRoiUseMonths = {
         }
     }
 }
+
+
+### UNIT ICONS ###
+set_unit_icon = {
+	effect = {
+		# Setting
+		if = {
+			limit = {
+				AND = {
+					exists = scope:icon_idx
+					NOT = { has_variable = current_icon_idx }
+				}
+			}
+			set_variable = { name = current_icon_idx value = scope:icon_idx }
+		}
+		# Replacing
+		else_if = {
+			limit = {
+				AND = {
+					exists = scope:icon_idx
+					has_variable = current_icon_idx
+					scope:icon_idx != var:current_icon_idx
+				}
+			}
+			remove_variable = current_icon_idx
+			set_variable = { name = current_icon_idx value = scope:icon_idx }
+		}
+		# Removing
+		else = {
+			remove_variable = current_icon_idx
+		}
+	}
+}
+
+SetShowUnavailableSocietalValueSuggestions = {
+    effect = {
+        if = {
+            limit = { NOT = { has_variable = showUnavailableSocietalValueSuggestions } }
+            set_variable = { name = showUnavailableSocietalValueSuggestions value = 1 }
+        }
+        else = {
+            remove_variable = showUnavailableSocietalValueSuggestions
+        }
+    }
+}

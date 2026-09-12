@@ -4,6 +4,8 @@
 	ai_tick = never
 	use_enroute = no
 	block_when_at_war = no
+	show_message = no
+	show_message_to_target = no
 
 	potential = {
 		scope:actor = { cmf_can_use_unrestricted_tools = yes }
@@ -35,15 +37,32 @@
 	select_trigger = {
 		allow_self = yes
 		looking_for_a = country
+		target_flag = recipient
+		name = ht_select_self_to_continue
+
+
+		show_if = {
+			has_global_variable = ht_target_self
+			NOT = { country_exists = scope:recipient }
+		}
+
+		column = { data = name }
+
+		visible = {
+			this = scope:actor
+		}
+	}
+
+	select_trigger = {
+		allow_self = yes
+		looking_for_a = country
 		target_flag = target
 		name = ht_select_second_country
 
 
 		show_if = {
-			OR = {
-				has_global_variable = ht_target_self
-				exists = scope:recipient
-			}
+			NOT = { has_global_variable = ht_target_self }
+			country_exists = scope:recipient
 		}
 
 		column = { data = name }
@@ -54,10 +73,6 @@
 				country_type = pop
 			}
 			NOT = { this = scope:recipient }
-			OR = {
-				NOT = { has_global_variable = ht_target_self }
-				NOT = { this = scope:actor }
-			}
 		}
 	}
 
@@ -65,6 +80,10 @@
 		hidden_effect = {
 			if = {
 				limit = { has_global_variable = ht_target_self }
+				if = {
+					limit = { country_exists = scope:recipient }
+					scope:recipient = { save_scope_as = target }
+				}
 				scope:actor = { save_scope_as = recipient }
 			}
 			if = {
@@ -84,6 +103,8 @@ ht_break_alliance = {
 	ai_tick = never
 	use_enroute = no
 	block_when_at_war = no
+	show_message = no
+	show_message_to_target = no
 
 	potential = {
 		scope:actor = { cmf_can_use_unrestricted_tools = yes }
@@ -115,15 +136,32 @@ ht_break_alliance = {
 	select_trigger = {
 		allow_self = yes
 		looking_for_a = country
+		target_flag = recipient
+		name = ht_select_self_to_continue
+
+
+		show_if = {
+			has_global_variable = ht_target_self
+			NOT = { country_exists = scope:recipient }
+		}
+
+		column = { data = name }
+
+		visible = {
+			this = scope:actor
+		}
+	}
+
+	select_trigger = {
+		allow_self = yes
+		looking_for_a = country
 		target_flag = target
 		name = ht_select_second_country
 
 
 		show_if = {
-			OR = {
-				has_global_variable = ht_target_self
-				exists = scope:recipient
-			}
+			NOT = { has_global_variable = ht_target_self }
+			country_exists = scope:recipient
 		}
 
 		column = { data = name }
@@ -134,23 +172,10 @@ ht_break_alliance = {
 				country_type = pop
 			}
 			NOT = { this = scope:recipient }
-			OR = {
-				NOT = { has_global_variable = ht_target_self }
-				NOT = { this = scope:actor }
-			}
 		}
 
 		enabled = {
-			OR = {
-				AND = {
-					has_global_variable = ht_target_self
-					is_allied_with = { target = scope:actor }
-				}
-				AND = {
-					NOT = { has_global_variable = ht_target_self }
-					is_allied_with = { target = scope:recipient }
-				}
-			}
+			is_allied_with = { target = scope:recipient }
 		}
 	}
 
@@ -158,12 +183,17 @@ ht_break_alliance = {
 		hidden_effect = {
 			if = {
 				limit = { has_global_variable = ht_target_self }
+				if = {
+					limit = { country_exists = scope:recipient }
+					scope:recipient = { save_scope_as = target }
+				}
 				scope:actor = { save_scope_as = recipient }
 			}
 			if = {
 				limit = {
 					exists = scope:recipient
 					exists = scope:target
+					scope:target = { is_allied_with = { target = scope:recipient } }
 				}
 				ht_break_alliance_effect = yes
 			}
@@ -177,6 +207,8 @@ ht_force_guarantee = {
 	ai_tick = never
 	use_enroute = no
 	block_when_at_war = no
+	show_message = no
+	show_message_to_target = no
 
 	potential = {
 		scope:actor = { cmf_can_use_unrestricted_tools = yes }
@@ -208,15 +240,32 @@ ht_force_guarantee = {
 	select_trigger = {
 		allow_self = yes
 		looking_for_a = country
+		target_flag = recipient
+		name = ht_select_self_to_continue
+
+
+		show_if = {
+			has_global_variable = ht_target_self
+			NOT = { country_exists = scope:recipient }
+		}
+
+		column = { data = name }
+
+		visible = {
+			this = scope:actor
+		}
+	}
+
+	select_trigger = {
+		allow_self = yes
+		looking_for_a = country
 		target_flag = target
 		name = ht_select_second_country
 
 
 		show_if = {
-			OR = {
-				has_global_variable = ht_target_self
-				exists = scope:recipient
-			}
+			NOT = { has_global_variable = ht_target_self }
+			country_exists = scope:recipient
 		}
 
 		column = { data = name }
@@ -227,10 +276,6 @@ ht_force_guarantee = {
 				country_type = pop
 			}
 			NOT = { this = scope:recipient }
-			OR = {
-				NOT = { has_global_variable = ht_target_self }
-				NOT = { this = scope:actor }
-			}
 		}
 	}
 
@@ -238,6 +283,10 @@ ht_force_guarantee = {
 		hidden_effect = {
 			if = {
 				limit = { has_global_variable = ht_target_self }
+				if = {
+					limit = { country_exists = scope:recipient }
+					scope:recipient = { save_scope_as = target }
+				}
 				scope:actor = { save_scope_as = recipient }
 			}
 			if = {
@@ -257,6 +306,8 @@ ht_break_guarantee = {
 	ai_tick = never
 	use_enroute = no
 	block_when_at_war = no
+	show_message = no
+	show_message_to_target = no
 
 	potential = {
 		scope:actor = { cmf_can_use_unrestricted_tools = yes }
@@ -288,15 +339,32 @@ ht_break_guarantee = {
 	select_trigger = {
 		allow_self = yes
 		looking_for_a = country
+		target_flag = recipient
+		name = ht_select_self_to_continue
+
+
+		show_if = {
+			has_global_variable = ht_target_self
+			NOT = { country_exists = scope:recipient }
+		}
+
+		column = { data = name }
+
+		visible = {
+			this = scope:actor
+		}
+	}
+
+	select_trigger = {
+		allow_self = yes
+		looking_for_a = country
 		target_flag = target
 		name = ht_select_second_country
 
 
 		show_if = {
-			OR = {
-				has_global_variable = ht_target_self
-				exists = scope:recipient
-			}
+			NOT = { has_global_variable = ht_target_self }
+			country_exists = scope:recipient
 		}
 
 		column = { data = name }
@@ -307,28 +375,12 @@ ht_break_guarantee = {
 				country_type = pop
 			}
 			NOT = { this = scope:recipient }
-			OR = {
-				NOT = { has_global_variable = ht_target_self }
-				NOT = { this = scope:actor }
-			}
 		}
 
 		enabled = {
-			OR = {
-				AND = {
-					has_global_variable = ht_target_self
-					receiving_scripted_relation = {
-						type = relation_type:guarantee
-						target = scope:actor
-					}
-				}
-				AND = {
-					NOT = { has_global_variable = ht_target_self }
-					receiving_scripted_relation = {
-						type = relation_type:guarantee
-						target = scope:recipient
-					}
-				}
+			receiving_scripted_relation = {
+				type = relation_type:guarantee
+				target = scope:recipient
 			}
 		}
 	}
@@ -337,12 +389,22 @@ ht_break_guarantee = {
 		hidden_effect = {
 			if = {
 				limit = { has_global_variable = ht_target_self }
+				if = {
+					limit = { country_exists = scope:recipient }
+					scope:recipient = { save_scope_as = target }
+				}
 				scope:actor = { save_scope_as = recipient }
 			}
 			if = {
 				limit = {
 					exists = scope:recipient
 					exists = scope:target
+					scope:target = {
+						receiving_scripted_relation = {
+							type = relation_type:guarantee
+							target = scope:recipient
+						}
+					}
 				}
 				ht_break_guarantee_effect = yes
 			}
@@ -356,6 +418,8 @@ ht_add_truce = {
 	ai_tick = never
 	use_enroute = no
 	block_when_at_war = no
+	show_message = no
+	show_message_to_target = no
 
 	potential = {
 		scope:actor = { cmf_can_use_unrestricted_tools = yes }
@@ -387,15 +451,32 @@ ht_add_truce = {
 	select_trigger = {
 		allow_self = yes
 		looking_for_a = country
+		target_flag = recipient
+		name = ht_select_self_to_continue
+
+
+		show_if = {
+			has_global_variable = ht_target_self
+			NOT = { country_exists = scope:recipient }
+		}
+
+		column = { data = name }
+
+		visible = {
+			this = scope:actor
+		}
+	}
+
+	select_trigger = {
+		allow_self = yes
+		looking_for_a = country
 		target_flag = target
 		name = ht_select_second_country
 
 
 		show_if = {
-			OR = {
-				has_global_variable = ht_target_self
-				exists = scope:recipient
-			}
+			NOT = { has_global_variable = ht_target_self }
+			country_exists = scope:recipient
 		}
 
 		column = { data = name }
@@ -406,10 +487,6 @@ ht_add_truce = {
 				country_type = pop
 			}
 			NOT = { this = scope:recipient }
-			OR = {
-				NOT = { has_global_variable = ht_target_self }
-				NOT = { this = scope:actor }
-			}
 		}
 	}
 
@@ -417,6 +494,10 @@ ht_add_truce = {
 		hidden_effect = {
 			if = {
 				limit = { has_global_variable = ht_target_self }
+				if = {
+					limit = { country_exists = scope:recipient }
+					scope:recipient = { save_scope_as = target }
+				}
 				scope:actor = { save_scope_as = recipient }
 			}
 			if = {
@@ -436,6 +517,8 @@ ht_remove_truce = {
 	ai_tick = never
 	use_enroute = no
 	block_when_at_war = no
+	show_message = no
+	show_message_to_target = no
 
 	potential = {
 		scope:actor = { cmf_can_use_unrestricted_tools = yes }
@@ -467,15 +550,32 @@ ht_remove_truce = {
 	select_trigger = {
 		allow_self = yes
 		looking_for_a = country
+		target_flag = recipient
+		name = ht_select_self_to_continue
+
+
+		show_if = {
+			has_global_variable = ht_target_self
+			NOT = { country_exists = scope:recipient }
+		}
+
+		column = { data = name }
+
+		visible = {
+			this = scope:actor
+		}
+	}
+
+	select_trigger = {
+		allow_self = yes
+		looking_for_a = country
 		target_flag = target
 		name = ht_select_second_country
 
 
 		show_if = {
-			OR = {
-				has_global_variable = ht_target_self
-				exists = scope:recipient
-			}
+			NOT = { has_global_variable = ht_target_self }
+			country_exists = scope:recipient
 		}
 
 		column = { data = name }
@@ -486,10 +586,6 @@ ht_remove_truce = {
 				country_type = pop
 			}
 			NOT = { this = scope:recipient }
-			OR = {
-				NOT = { has_global_variable = ht_target_self }
-				NOT = { this = scope:actor }
-			}
 		}
 	}
 
@@ -497,6 +593,10 @@ ht_remove_truce = {
 		hidden_effect = {
 			if = {
 				limit = { has_global_variable = ht_target_self }
+				if = {
+					limit = { country_exists = scope:recipient }
+					scope:recipient = { save_scope_as = target }
+				}
 				scope:actor = { save_scope_as = recipient }
 			}
 			if = {
@@ -516,6 +616,8 @@ ht_add_rival = {
 	ai_tick = never
 	use_enroute = no
 	block_when_at_war = no
+	show_message = no
+	show_message_to_target = no
 
 	potential = {
 		scope:actor = { cmf_can_use_unrestricted_tools = yes }
@@ -547,15 +649,32 @@ ht_add_rival = {
 	select_trigger = {
 		allow_self = yes
 		looking_for_a = country
+		target_flag = recipient
+		name = ht_select_self_to_continue
+
+
+		show_if = {
+			has_global_variable = ht_target_self
+			NOT = { country_exists = scope:recipient }
+		}
+
+		column = { data = name }
+
+		visible = {
+			this = scope:actor
+		}
+	}
+
+	select_trigger = {
+		allow_self = yes
+		looking_for_a = country
 		target_flag = target
 		name = ht_select_second_country
 
 
 		show_if = {
-			OR = {
-				has_global_variable = ht_target_self
-				exists = scope:recipient
-			}
+			NOT = { has_global_variable = ht_target_self }
+			country_exists = scope:recipient
 		}
 
 		column = { data = name }
@@ -566,10 +685,6 @@ ht_add_rival = {
 				country_type = pop
 			}
 			NOT = { this = scope:recipient }
-			OR = {
-				NOT = { has_global_variable = ht_target_self }
-				NOT = { this = scope:actor }
-			}
 		}
 	}
 
@@ -577,6 +692,10 @@ ht_add_rival = {
 		hidden_effect = {
 			if = {
 				limit = { has_global_variable = ht_target_self }
+				if = {
+					limit = { country_exists = scope:recipient }
+					scope:recipient = { save_scope_as = target }
+				}
 				scope:actor = { save_scope_as = recipient }
 			}
 			if = {
@@ -596,6 +715,8 @@ ht_remove_rival = {
 	ai_tick = never
 	use_enroute = no
 	block_when_at_war = no
+	show_message = no
+	show_message_to_target = no
 
 	potential = {
 		scope:actor = { cmf_can_use_unrestricted_tools = yes }
@@ -627,15 +748,32 @@ ht_remove_rival = {
 	select_trigger = {
 		allow_self = yes
 		looking_for_a = country
+		target_flag = recipient
+		name = ht_select_self_to_continue
+
+
+		show_if = {
+			has_global_variable = ht_target_self
+			NOT = { country_exists = scope:recipient }
+		}
+
+		column = { data = name }
+
+		visible = {
+			this = scope:actor
+		}
+	}
+
+	select_trigger = {
+		allow_self = yes
+		looking_for_a = country
 		target_flag = target
 		name = ht_select_second_country
 
 
 		show_if = {
-			OR = {
-				has_global_variable = ht_target_self
-				exists = scope:recipient
-			}
+			NOT = { has_global_variable = ht_target_self }
+			country_exists = scope:recipient
 		}
 
 		column = { data = name }
@@ -646,10 +784,6 @@ ht_remove_rival = {
 				country_type = pop
 			}
 			NOT = { this = scope:recipient }
-			OR = {
-				NOT = { has_global_variable = ht_target_self }
-				NOT = { this = scope:actor }
-			}
 		}
 	}
 
@@ -657,6 +791,10 @@ ht_remove_rival = {
 		hidden_effect = {
 			if = {
 				limit = { has_global_variable = ht_target_self }
+				if = {
+					limit = { country_exists = scope:recipient }
+					scope:recipient = { save_scope_as = target }
+				}
 				scope:actor = { save_scope_as = recipient }
 			}
 			if = {

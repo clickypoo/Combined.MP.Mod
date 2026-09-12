@@ -1,46 +1,26 @@
-﻿ht_get_current_target = {
-	type = country
-	text = {
-		trigger = { has_global_variable = ht_target_self }
-		localization_key = ht_target_label_self
-	}
-	text = {
-		trigger = { country_exists = ROOT }
-		localization_key = ht_target_label_selected_act
-	}
-	text = {
-		localization_key = ht_another_country_placeholder
-		fallback = yes
-	}
-}
-
-# Recipient-slot display name. type = none keeps it null-safe when scope:recipient is null at
-# preview time; the ht_target_self branch returns the player's own name because recipient = actor
-# in that mode.
+﻿# Recipient-slot display name, religion and culture. type = none keeps them null-safe when no
+# recipient is set yet; the ht_target_self branch returns the player's own country because
+# recipient = actor in that mode.
 ht_get_recipient_country = {
-	type = country
+	type = none
 	text = {
 		trigger = { has_global_variable = ht_target_self }
 		localization_key = ht_self_country_name
 	}
 	text = {
-		trigger = { country_exists = ROOT }
 		localization_key = ht_recipient_country_name
-	}
-	text = {
-		localization_key = ht_another_country_placeholder
 		fallback = yes
 	}
 }
 
 ht_get_recipient_country_religion = {
-	type = country
+	type = none
 	text = {
 		trigger = { has_global_variable = ht_target_self }
 		localization_key = ht_self_country_religion
 	}
 	text = {
-		trigger = { country_exists = ROOT }
+		trigger = { country_exists = scope:recipient }
 		localization_key = ht_recipient_country_religion
 	}
 	text = {
@@ -50,13 +30,13 @@ ht_get_recipient_country_religion = {
 }
 
 ht_get_recipient_country_culture = {
-	type = country
+	type = none
 	text = {
 		trigger = { has_global_variable = ht_target_self }
 		localization_key = ht_self_country_culture
 	}
 	text = {
-		trigger = { country_exists = ROOT }
+		trigger = { country_exists = scope:recipient }
 		localization_key = ht_recipient_country_culture
 	}
 	text = {
@@ -64,10 +44,14 @@ ht_get_recipient_country_culture = {
 		fallback = yes
 	}
 }
-# Picked-target display name. type = none keeps it null-safe when scope:target is null at preview
-# time before the user picks.
+# Picked-target display name; in Target: Self the recipient slot is the target. type = none keeps
+# it null-safe when scope:target is null at preview time before the user picks.
 ht_get_target_country = {
 	type = none
+	text = {
+		trigger = { has_global_variable = ht_target_self }
+		localization_key = ht_recipient_country_name
+	}
 	text = {
 		trigger = { country_exists = scope:target }
 		localization_key = ht_picked_country_name

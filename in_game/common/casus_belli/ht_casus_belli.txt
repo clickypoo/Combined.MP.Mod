@@ -1,0 +1,288 @@
+﻿# Granted only by the Add Casus Belli action, so fabrication is closed off on every tier.
+
+ht_cb_cost_0 = {
+	create_visible = { always = no }
+	create_enabled = { always = no }
+
+	war_goal_type = ht_wargoal_cost_0
+}
+
+ht_cb_cost_5 = {
+	create_visible = { always = no }
+	create_enabled = { always = no }
+
+	war_goal_type = ht_wargoal_cost_5
+}
+
+ht_cb_cost_10 = {
+	create_visible = { always = no }
+	create_enabled = { always = no }
+
+	war_goal_type = ht_wargoal_cost_10
+}
+
+ht_cb_cost_15 = {
+	create_visible = { always = no }
+	create_enabled = { always = no }
+
+	war_goal_type = ht_wargoal_cost_15
+}
+
+ht_cb_cost_20 = {
+	create_visible = { always = no }
+	create_enabled = { always = no }
+
+	war_goal_type = ht_wargoal_cost_20
+}
+
+ht_cb_cost_25 = {
+	create_visible = { always = no }
+	create_enabled = { always = no }
+
+	war_goal_type = ht_wargoal_cost_25
+}
+
+ht_cb_cost_30 = {
+	create_visible = { always = no }
+	create_enabled = { always = no }
+
+	war_goal_type = ht_wargoal_cost_30
+}
+
+ht_cb_cost_35 = {
+	create_visible = { always = no }
+	create_enabled = { always = no }
+
+	war_goal_type = ht_wargoal_cost_35
+}
+
+ht_cb_cost_40 = {
+	create_visible = { always = no }
+	create_enabled = { always = no }
+
+	war_goal_type = ht_wargoal_cost_40
+}
+
+ht_cb_cost_45 = {
+	create_visible = { always = no }
+	create_enabled = { always = no }
+
+	war_goal_type = ht_wargoal_cost_45
+}
+
+ht_cb_cost_50 = {
+	create_visible = { always = no }
+	create_enabled = { always = no }
+
+	war_goal_type = ht_wargoal_cost_50
+}
+
+ht_cb_cost_55 = {
+	create_visible = { always = no }
+	create_enabled = { always = no }
+
+	war_goal_type = ht_wargoal_cost_55
+}
+
+ht_cb_cost_60 = {
+	create_visible = { always = no }
+	create_enabled = { always = no }
+
+	war_goal_type = ht_wargoal_cost_60
+}
+
+ht_cb_cost_65 = {
+	create_visible = { always = no }
+	create_enabled = { always = no }
+
+	war_goal_type = ht_wargoal_cost_65
+}
+
+ht_cb_cost_70 = {
+	create_visible = { always = no }
+	create_enabled = { always = no }
+
+	war_goal_type = ht_wargoal_cost_70
+}
+
+ht_cb_cost_75 = {
+	create_visible = { always = no }
+	create_enabled = { always = no }
+
+	war_goal_type = ht_wargoal_cost_75
+}
+
+ht_cb_cost_80 = {
+	create_visible = { always = no }
+	create_enabled = { always = no }
+
+	war_goal_type = ht_wargoal_cost_80
+}
+
+ht_cb_cost_85 = {
+	create_visible = { always = no }
+	create_enabled = { always = no }
+
+	war_goal_type = ht_wargoal_cost_85
+}
+
+ht_cb_cost_90 = {
+	create_visible = { always = no }
+	create_enabled = { always = no }
+
+	war_goal_type = ht_wargoal_cost_90
+}
+
+ht_cb_cost_95 = {
+	create_visible = { always = no }
+	create_enabled = { always = no }
+
+	war_goal_type = ht_wargoal_cost_95
+}
+
+ht_cb_cost_100 = {
+	create_visible = { always = no }
+	create_enabled = { always = no }
+
+	war_goal_type = ht_wargoal_cost_100
+}
+
+ht_cb_cost_105 = {
+	create_visible = { always = no }
+	create_enabled = { always = no }
+
+	war_goal_type = ht_wargoal_cost_105
+}
+
+ht_cb_cost_110 = {
+	create_visible = { always = no }
+	create_enabled = { always = no }
+
+	war_goal_type = ht_wargoal_cost_110
+}
+
+ht_cb_cost_115 = {
+	create_visible = { always = no }
+	create_enabled = { always = no }
+
+	war_goal_type = ht_wargoal_cost_115
+}
+
+ht_cb_cost_120 = {
+	create_visible = { always = no }
+	create_enabled = { always = no }
+
+	war_goal_type = ht_wargoal_cost_120
+}
+
+ht_cb_cost_125 = {
+	create_visible = { always = no }
+	create_enabled = { always = no }
+
+	war_goal_type = ht_wargoal_cost_125
+}
+
+ht_cb_cost_130 = {
+	create_visible = { always = no }
+	create_enabled = { always = no }
+
+	war_goal_type = ht_wargoal_cost_130
+}
+
+ht_cb_cost_135 = {
+	create_visible = { always = no }
+	create_enabled = { always = no }
+
+	war_goal_type = ht_wargoal_cost_135
+}
+
+ht_cb_cost_140 = {
+	create_visible = { always = no }
+	create_enabled = { always = no }
+
+	war_goal_type = ht_wargoal_cost_140
+}
+
+ht_cb_cost_145 = {
+	create_visible = { always = no }
+	create_enabled = { always = no }
+
+	war_goal_type = ht_wargoal_cost_145
+}
+
+ht_cb_cost_150 = {
+	create_visible = { always = no }
+	create_enabled = { always = no }
+
+	war_goal_type = ht_wargoal_cost_150
+}
+
+ht_cb_cost_155 = {
+	create_visible = { always = no }
+	create_enabled = { always = no }
+
+	war_goal_type = ht_wargoal_cost_155
+}
+
+ht_cb_cost_160 = {
+	create_visible = { always = no }
+	create_enabled = { always = no }
+
+	war_goal_type = ht_wargoal_cost_160
+}
+
+ht_cb_cost_165 = {
+	create_visible = { always = no }
+	create_enabled = { always = no }
+
+	war_goal_type = ht_wargoal_cost_165
+}
+
+ht_cb_cost_170 = {
+	create_visible = { always = no }
+	create_enabled = { always = no }
+
+	war_goal_type = ht_wargoal_cost_170
+}
+
+ht_cb_cost_175 = {
+	create_visible = { always = no }
+	create_enabled = { always = no }
+
+	war_goal_type = ht_wargoal_cost_175
+}
+
+ht_cb_cost_180 = {
+	create_visible = { always = no }
+	create_enabled = { always = no }
+
+	war_goal_type = ht_wargoal_cost_180
+}
+
+ht_cb_cost_185 = {
+	create_visible = { always = no }
+	create_enabled = { always = no }
+
+	war_goal_type = ht_wargoal_cost_185
+}
+
+ht_cb_cost_190 = {
+	create_visible = { always = no }
+	create_enabled = { always = no }
+
+	war_goal_type = ht_wargoal_cost_190
+}
+
+ht_cb_cost_195 = {
+	create_visible = { always = no }
+	create_enabled = { always = no }
+
+	war_goal_type = ht_wargoal_cost_195
+}
+
+ht_cb_cost_200 = {
+	create_visible = { always = no }
+	create_enabled = { always = no }
+
+	war_goal_type = ht_wargoal_cost_200
+}

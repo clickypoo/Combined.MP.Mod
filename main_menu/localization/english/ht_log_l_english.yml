@@ -20,6 +20,7 @@
  ht_log_declared_war: "declared war on"
  ht_log_white_peace: "white-peaced"
  ht_log_changed_war_exhaustion: "changed war exhaustion by [CMMV('ht__war_exhaustion_amount')] for"
+ ht_log_added_casus_belli: "gained a [CMMV('ht__casus_belli_discount')|+0V]% discount casus belli against"
 
  # ── Country Management Log Actions (mixed) ───────────────────────────────────
  ht_log_annexed: "annexed"
@@ -27,8 +28,12 @@
  ht_log_vassalized: "vassalized"
  ht_log_killed_ruler: "killed ruler of"
  ht_log_ended_regency: "ended the regency of"
+ ht_log_called_parliament: "called a parliament for"
  ht_log_changed_religion: "copied religion to"
  ht_log_changed_culture: "copied culture to"
  ht_log_changed_government: "copied government to"
  ht_log_converted_pops: "converted [CMMV('ht__religion_conversion_percentage')]% of pops in"
  ht_log_assimilated_pops: "assimilated [CMMV('ht__culture_assimilation_percentage')]% of pops in"
+ ht_log_gave_location: "gave a location to"
+ ht_log_gave_province: "gave a province to"
+ ht_log_gave_area: "gave an area to"

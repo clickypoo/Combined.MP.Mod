@@ -21,3 +21,8 @@ l_english:
  REFRESH_AVG_PROX:"Refresh Average Proximity"
  MAPMODE_BUILDING_LEVELS: "Colors the [locations|e] based on the percentage of used [supported_building_levels|e]."
  mapmode_building_levels_name: "Building Levels"
+ season_spring: "@spring!"
+ season_summer: "@summer!"
+ season_autumn: "@autumn!"
+ season_winter: "@winter!"
+ GLORP_UI_CURRENT_SEASON: "[Player.Custom('glorpui_get_current_season')]"
