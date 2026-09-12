@@ -32,3 +32,8 @@
  ht_log_changed_government: "정부에서 복사하여"
  ht_log_converted_pops: "[CMMV('ht__religion_conversion_percentage')]%의 인구가 개종했습니다."
  ht_log_assimilated_pops: "인구의 [CMMV('ht__culture_assimilation_percentage')]%가"
+ ht_log_added_casus_belli: "[CMMV('ht__casus_belli_discount')|+0V]%의 카수스 벨리 할인율을 얻었습니다."
+ ht_log_called_parliament: "~을 위해 소집된 의회"
+ ht_log_gave_location: "~에게 위치를 알려주었다"
+ ht_log_gave_province: "~에게 한 지방을 하사했다"
+ ht_log_gave_area: "~에게 한 구역을 할당했다"

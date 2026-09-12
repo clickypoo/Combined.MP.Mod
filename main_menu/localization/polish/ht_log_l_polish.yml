@@ -32,3 +32,8 @@
  ht_log_changed_government: "skopiowano rząd do"
  ht_log_converted_pops: "[CMMV('ht__religion_conversion_percentage')]% ludności w"
  ht_log_assimilated_pops: "[CMMV('ht__culture_assimilation_percentage')]% populacji w"
+ ht_log_added_casus_belli: "uzyskał [CMMV('ht__casus_belli_discount')|+0V]% zniżki na casus belli przeciwko"
+ ht_log_called_parliament: "zwołał zgromadzenie ustawodawcze w celu"
+ ht_log_gave_location: "podał lokalizację do"
+ ht_log_gave_province: "przyznał prowincję"
+ ht_log_gave_area: "przekazał obszar do"

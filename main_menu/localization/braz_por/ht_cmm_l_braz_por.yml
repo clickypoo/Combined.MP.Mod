@@ -48,3 +48,7 @@
  ht__religion_conversion_percentage: "ht__religion_conversion_percentage"
  ht__culture_assimilation_percentage: "ht__culture_assimilation_percentage"
  ht__war_exhaustion_amount: "ht__war_exhaustion_amount"
+ ht__casus_belli_discount_name: "Desconto Casus Belli"
+ ht__casus_belli_discount_desc: "Quanto mais barato fica o acordo de paz resultante de um casus belli gerado pela ação “Adicionar Casus Belli”. A conquista de territórios e súditos custa essa quantidade a menos de pontos de guerra. Valores negativos, por sua vez, fazem com que custem mais."
+ ht__casus_belli_discount_format: "[CMMV('ht__casus_belli_discount')]%"
+ ht__casus_belli_discount: "ht__casus_belli_discount"

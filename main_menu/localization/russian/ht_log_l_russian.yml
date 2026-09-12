@@ -32,3 +32,8 @@
  ht_log_changed_government: "скопировал правительство в"
  ht_log_converted_pops: "[CMMV('ht__religion_conversion_percentage')]% населения в"
  ht_log_assimilated_pops: "ассимилировалось [CMMV('ht__culture_assimilation_percentage')]% населения в"
+ ht_log_added_casus_belli: "получил скидку [CMMV('ht__casus_belli_discount')|+0V]% на casus belli против"
+ ht_log_called_parliament: "созванный парламент для"
+ ht_log_gave_location: "указал местоположение"
+ ht_log_gave_province: "подарил провинцию"
+ ht_log_gave_area: "выделил участок для"

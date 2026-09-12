@@ -32,3 +32,8 @@
  ht_log_changed_government: "政府をコピーして"
  ht_log_converted_pops: "[CMMV('ht__religion_conversion_percentage')]%の人口が改宗した"
  ht_log_assimilated_pops: "対象集団の [CMMV('ht__culture_assimilation_percentage')]% が同化された"
+ ht_log_added_casus_belli: "[CMMV('ht__casus_belli_discount')|+0V]%の「カズス・ベリ」割引を獲得した"
+ ht_log_called_parliament: "～のために議会を招集した"
+ ht_log_gave_location: "に場所を指定した"
+ ht_log_gave_province: "～に州を授けた"
+ ht_log_gave_area: "ある地域を"

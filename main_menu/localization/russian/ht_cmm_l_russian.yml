@@ -48,3 +48,7 @@
  ht__religion_conversion_percentage: "ht__religion_conversion_percentage"
  ht__culture_assimilation_percentage: "ht__culture_assimilation_percentage"
  ht__war_exhaustion_amount: "ht__war_exhaustion_amount"
+ ht__casus_belli_discount_name: "Скидка «Casus Belli»"
+ ht__casus_belli_discount_desc: "Насколько дешевле становится итоговое мирное соглашение благодаря «казусу белли», созданному с помощью действия «Добавить казус белли». Захват земель и подданных обходится на столько меньше очков войны. Отрицательные значения, напротив, приводят к увеличению затрат."
+ ht__casus_belli_discount_format: "[CMMV('ht__casus_belli_discount')]%"
+ ht__casus_belli_discount: "ht__casus_belli_discount"

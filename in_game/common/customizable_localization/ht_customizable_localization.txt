@@ -61,3 +61,33 @@ ht_get_target_country = {
 		fallback = yes
 	}
 }
+
+# Sentence-initial variants of the two above. Only the placeholder differs, since a country's own
+# name is already capitalized.
+ht_get_recipient_country_capitalized = {
+	type = none
+	text = {
+		trigger = { has_global_variable = ht_target_self }
+		localization_key = ht_self_country_name
+	}
+	text = {
+		localization_key = ht_recipient_country_name_capitalized
+		fallback = yes
+	}
+}
+
+ht_get_target_country_capitalized = {
+	type = none
+	text = {
+		trigger = { has_global_variable = ht_target_self }
+		localization_key = ht_recipient_country_name_capitalized
+	}
+	text = {
+		trigger = { country_exists = scope:target }
+		localization_key = ht_picked_country_name
+	}
+	text = {
+		localization_key = ht_another_country_placeholder_capitalized
+		fallback = yes
+	}
+}

@@ -47,16 +47,14 @@ types CountryHeaders {
 				allow_outside = yes
 				block "stats_left" { }
 				block "character_widget" {
-					widget = {
-						position = { 0 -20 }
+					widget = { # GlorpUI: vanilla position removed, not allowed inside this hbox
 						allow_outside = yes
 						block "portrait_io_widget" {
 							size = { 250 200 }
 						}
 
-						block "character_portrait_anchor" {
-							parentanchor = bottom
-						}
+						# GlorpUI: vanilla parentanchor removed, not allowed inside this hbox
+						block "character_portrait_anchor" { }
 
 						portrait_standard_full_body_center_button = {
 							block "character_right_visible" {

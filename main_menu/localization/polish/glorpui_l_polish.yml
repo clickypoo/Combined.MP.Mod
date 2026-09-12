@@ -21,3 +21,8 @@ l_polish:
  REFRESH_AVG_PROX: "Odśwież średnią odległość"
  MAPMODE_BUILDING_LEVELS: "Zmienia kolory [locations|e] w zależności od procentowego wykorzystania [supported_building_levels|e]."
  mapmode_building_levels_name: "Poziomy budynku"
+ season_spring: "@spring!"
+ season_summer: "@summer!"
+ season_autumn: "@autumn!"
+ season_winter: "@winter!"
+ GLORP_UI_CURRENT_SEASON: "[Player.Custom('glorpui_get_current_season')]"

@@ -32,3 +32,8 @@
  ht_log_changed_government: "将政府复制到"
  ht_log_converted_pops: "[CMMV('ht__religion_conversion_percentage')]% 的人口已皈依"
  ht_log_assimilated_pops: "该地区人口中有 [CMMV('ht__culture_assimilation_percentage')]% 已被同化"
+ ht_log_added_casus_belli: "获得了[CMMV('ht__casus_belli_discount')|+0V]%的“开战理由”折扣，针对"
+ ht_log_called_parliament: "召集议会以……"
+ ht_log_gave_location: "为……指定了位置"
+ ht_log_gave_province: "将一个省赐予"
+ ht_log_gave_area: "将一个区域分配给"

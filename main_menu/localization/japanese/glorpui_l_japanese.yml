@@ -21,3 +21,8 @@ l_japanese:
  REFRESH_AVG_PROX: "平均近接度を更新"
  MAPMODE_BUILDING_LEVELS: "使用済みの [supported_building_levels|e] の割合に基づいて[locations|e] に色を付けます。"
  mapmode_building_levels_name: "建物の階数"
+ season_spring: "@spring!"
+ season_summer: "@summer!"
+ season_autumn: "@autumn!"
+ season_winter: "@winter!"
+ GLORP_UI_CURRENT_SEASON: "[Player.Custom('glorpui_get_current_season')]"

@@ -48,3 +48,7 @@
  ht__religion_conversion_percentage: "ht__religion_conversion_percentage"
  ht__culture_assimilation_percentage: "ht__culture_assimilation_percentage"
  ht__war_exhaustion_amount: "ht__war_exhaustion_amount"
+ ht__casus_belli_discount_name: "카수스 벨리 할인"
+ ht__casus_belli_discount_desc: "'전쟁 사유 추가' 행동을 통해 발생한 전쟁 사유가 평화 협정 체결에 드는 비용을 얼마나 절감시키는지 나타냅니다. 영토와 피지배민을 획득하는 데 드는 전쟁 점수는 이만큼 줄어듭니다. 음수 값인 경우, 오히려 비용이 더 많이 듭니다."
+ ht__casus_belli_discount_format: "[CMMV('ht__casus_belli_discount')]%"
+ ht__casus_belli_discount: "ht__casus_belli_discount"

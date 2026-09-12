@@ -64,25 +64,29 @@ ht_break_alliance_effect = {
 	scope:actor = { cmf_log_with_scope_args = { action = ht_log_broke_alliance } }
 }
 
+# Two-target: recipient = guaranteed country, target = guarantor. create_relation takes the
+# guarantor as first, per vanilla's Auld Alliance (in_game/events/DHE/flavor_SCO.txt:1676), and the
+# log args run guarantor then guaranteed to match the entry's wording.
 ht_force_guarantee_effect = {
 	create_relation = {
-		first = scope:recipient
-		second = scope:target
+		first = scope:target
+		second = scope:recipient
 		type = relation_type:guarantee
 	}
-	scope:recipient = { save_scope_as = cmf_log_arg1 }
-	scope:target = { save_scope_as = cmf_log_arg2 }
+	scope:target = { save_scope_as = cmf_log_arg1 }
+	scope:recipient = { save_scope_as = cmf_log_arg2 }
 	scope:actor = { cmf_log_with_scope_args = { action = ht_log_forced_guarantee } }
 }
 
+# Two-target: recipient = guaranteed country, target = guarantor
 ht_break_guarantee_effect = {
 	remove_relation = {
-		first = scope:recipient
-		second = scope:target
+		first = scope:target
+		second = scope:recipient
 		type = relation_type:guarantee
 	}
-	scope:recipient = { save_scope_as = cmf_log_arg1 }
-	scope:target = { save_scope_as = cmf_log_arg2 }
+	scope:target = { save_scope_as = cmf_log_arg1 }
+	scope:recipient = { save_scope_as = cmf_log_arg2 }
 	scope:actor = { cmf_log_with_scope_args = { action = ht_log_broke_guarantee } }
 }
 
@@ -299,33 +303,34 @@ ht_call_parliament_effect = {
 	scope:actor = { cmf_log_with_scope_arg = { action = ht_log_called_parliament } }
 }
 
-# Two-target: recipient = source country, target = country to change
+# Two-target: recipient = country to change, target = source. The log args run source then changed
+# country to match the entry's wording.
 ht_change_religion_effect = {
-	scope:target = {
-		change_religion = scope:recipient.religion
+	scope:recipient = {
+		change_religion = scope:target.religion
 	}
-	scope:recipient = { save_scope_as = cmf_log_arg1 }
-	scope:target = { save_scope_as = cmf_log_arg2 }
+	scope:target = { save_scope_as = cmf_log_arg1 }
+	scope:recipient = { save_scope_as = cmf_log_arg2 }
 	scope:actor = { cmf_log_with_scope_args = { action = ht_log_changed_religion } }
 }
 
-# Two-target: recipient = source country, target = country to change
+# Two-target: recipient = country to change, target = source
 ht_change_culture_effect = {
-	scope:target = {
-		change_culture = scope:recipient.culture
+	scope:recipient = {
+		change_culture = scope:target.culture
 	}
-	scope:recipient = { save_scope_as = cmf_log_arg1 }
-	scope:target = { save_scope_as = cmf_log_arg2 }
+	scope:target = { save_scope_as = cmf_log_arg1 }
+	scope:recipient = { save_scope_as = cmf_log_arg2 }
 	scope:actor = { cmf_log_with_scope_args = { action = ht_log_changed_culture } }
 }
 
-# Two-target: recipient = source country, target = country to change
+# Two-target: recipient = country to change, target = source
 ht_change_government_effect = {
-	scope:target = {
-		change_government_type = scope:recipient.government_type
+	scope:recipient = {
+		change_government_type = scope:target.government_type
 	}
-	scope:recipient = { save_scope_as = cmf_log_arg1 }
-	scope:target = { save_scope_as = cmf_log_arg2 }
+	scope:target = { save_scope_as = cmf_log_arg1 }
+	scope:recipient = { save_scope_as = cmf_log_arg2 }
 	scope:actor = { cmf_log_with_scope_args = { action = ht_log_changed_government } }
 }
 
@@ -486,7 +491,7 @@ ht_run_give_land = {
 			limit = { scope:ht_size_choice = situation:ht_size_location }
 			ht_give_location_effect = {
 				receiver = scope:actor.var:ht_land_receiver
-				target_location = scope:ht_target_location
+				target_location = scope:target_location
 			}
 			fire_generic_action = {
 				type = ht_give_land_location_action
@@ -498,7 +503,7 @@ ht_run_give_land = {
 			limit = { scope:ht_size_choice = situation:ht_size_province }
 			ht_give_province_effect = {
 				receiver = scope:actor.var:ht_land_receiver
-				target_province = scope:ht_target_province
+				target_province = scope:target_province
 			}
 			fire_generic_action = {
 				type = ht_give_land_province_action
@@ -510,7 +515,7 @@ ht_run_give_land = {
 			limit = { scope:ht_size_choice = situation:ht_size_area }
 			ht_give_area_effect = {
 				receiver = scope:actor.var:ht_land_receiver
-				target_area = scope:ht_target_area
+				target_area = scope:target_area
 			}
 			fire_generic_action = {
 				type = ht_give_land_area_action

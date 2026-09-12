@@ -48,3 +48,7 @@
  ht__religion_conversion_percentage: "ht__religion_conversion_percentage"
  ht__culture_assimilation_percentage: "ht__culture_assimilation_percentage"
  ht__war_exhaustion_amount: "ht__war_exhaustion_amount"
+ ht__casus_belli_discount_name: "Réduction « Casus Belli »"
+ ht__casus_belli_discount_desc: "Dans quelle mesure un casus belli issu de l'action « Ajouter un casus belli » réduit-il le coût de l'accord de paix qui en résulte ? La conquête de territoires et de sujets coûte d'autant moins de points de guerre. Les valeurs négatives, en revanche, augmentent ce coût."
+ ht__casus_belli_discount_format: "[CMMV('ht__casus_belli_discount')]%"
+ ht__casus_belli_discount: "ht__casus_belli_discount"

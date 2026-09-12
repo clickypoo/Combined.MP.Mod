@@ -19,7 +19,7 @@ ht_annex = {
 		allow_self = yes
 		looking_for_a = country
 		target_flag = recipient
-		name = ht_select_first_country
+		name = ht_select_recipient_country
 
 
 		show_if = {
@@ -59,7 +59,7 @@ ht_annex = {
 		allow_self = no
 		looking_for_a = country
 		target_flag = target
-		name = ht_select_second_country
+		name = ht_select_target_country
 
 
 		show_if = {
@@ -90,8 +90,8 @@ ht_annex = {
 			}
 			if = {
 				limit = {
-					exists = scope:recipient
-					exists = scope:target
+					country_exists = scope:recipient
+					country_exists = scope:target
 				}
 				ht_annex_effect = yes
 			}
@@ -120,7 +120,7 @@ ht_grant_independence = {
 		allow_self = no
 		looking_for_a = country
 		target_flag = recipient
-		name = ht_select_target
+		name = ht_select_recipient_country
 
 
 		column = { data = name }
@@ -140,7 +140,7 @@ ht_grant_independence = {
 	effect = {
 		hidden_effect = {
 			if = {
-				limit = { exists = scope:recipient }
+				limit = { country_exists = scope:recipient }
 				ht_grant_independence_effect = yes
 			}
 		}
@@ -168,7 +168,7 @@ ht_make_vassal = {
 		allow_self = yes
 		looking_for_a = country
 		target_flag = recipient
-		name = ht_select_first_country
+		name = ht_select_recipient_country
 
 
 		show_if = {
@@ -208,7 +208,7 @@ ht_make_vassal = {
 		allow_self = no
 		looking_for_a = country
 		target_flag = target
-		name = ht_select_second_country
+		name = ht_select_target_country
 
 
 		show_if = {
@@ -239,8 +239,8 @@ ht_make_vassal = {
 			}
 			if = {
 				limit = {
-					exists = scope:recipient
-					exists = scope:target
+					country_exists = scope:recipient
+					country_exists = scope:target
 				}
 				ht_make_vassal_effect = yes
 			}
@@ -269,7 +269,7 @@ ht_end_regency = {
 		allow_self = yes
 		looking_for_a = country
 		target_flag = recipient
-		name = ht_select_target
+		name = ht_select_recipient_country
 
 
 		show_if = {
@@ -321,7 +321,7 @@ ht_end_regency = {
 			}
 			if = {
 				limit = {
-					exists = scope:recipient
+					country_exists = scope:recipient
 					scope:recipient = { has_regent = yes }
 				}
 				ht_end_regency_effect = yes
@@ -351,7 +351,7 @@ ht_kill_ruler = {
 		allow_self = yes
 		looking_for_a = country
 		target_flag = recipient
-		name = ht_select_target
+		name = ht_select_recipient_country
 
 
 		show_if = {
@@ -394,7 +394,7 @@ ht_kill_ruler = {
 				scope:actor = { save_scope_as = recipient }
 			}
 			if = {
-				limit = { exists = scope:recipient }
+				limit = { country_exists = scope:recipient }
 				ht_kill_ruler_effect = yes
 			}
 		}
@@ -422,7 +422,7 @@ ht_call_parliament = {
 		allow_self = yes
 		looking_for_a = country
 		target_flag = recipient
-		name = ht_select_target
+		name = ht_select_recipient_country
 
 
 		show_if = {
@@ -482,7 +482,7 @@ ht_call_parliament = {
 			}
 			if = {
 				limit = {
-					exists = scope:recipient
+					country_exists = scope:recipient
 					scope:recipient = {
 						is_active_parliament = no
 						NOT = {
@@ -497,7 +497,7 @@ ht_call_parliament = {
 	}
 }
 
-# ── Two-target: recipient = source, target = country to change ───────────────────
+# ── Two-target: recipient = country to change, target = source ───────────────────
 
 ht_change_religion = {
 	type = diplomacy
@@ -518,7 +518,7 @@ ht_change_religion = {
 		allow_self = yes
 		looking_for_a = country
 		target_flag = recipient
-		name = ht_select_source_country
+		name = ht_select_recipient_country
 
 
 		show_if = {
@@ -558,7 +558,7 @@ ht_change_religion = {
 		allow_self = yes
 		looking_for_a = country
 		target_flag = target
-		name = ht_select_target_country
+		name = ht_select_source_country
 
 
 		show_if = {
@@ -588,8 +588,8 @@ ht_change_religion = {
 			}
 			if = {
 				limit = {
-					exists = scope:recipient
-					exists = scope:target
+					country_exists = scope:recipient
+					country_exists = scope:target
 				}
 				ht_change_religion_effect = yes
 			}
@@ -616,7 +616,7 @@ ht_change_culture = {
 		allow_self = yes
 		looking_for_a = country
 		target_flag = recipient
-		name = ht_select_source_country
+		name = ht_select_recipient_country
 
 
 		show_if = {
@@ -656,7 +656,7 @@ ht_change_culture = {
 		allow_self = yes
 		looking_for_a = country
 		target_flag = target
-		name = ht_select_target_country
+		name = ht_select_source_country
 
 
 		show_if = {
@@ -686,8 +686,8 @@ ht_change_culture = {
 			}
 			if = {
 				limit = {
-					exists = scope:recipient
-					exists = scope:target
+					country_exists = scope:recipient
+					country_exists = scope:target
 				}
 				ht_change_culture_effect = yes
 			}
@@ -714,7 +714,7 @@ ht_change_government = {
 		allow_self = yes
 		looking_for_a = country
 		target_flag = recipient
-		name = ht_select_source_country
+		name = ht_select_recipient_country
 
 
 		show_if = {
@@ -754,7 +754,7 @@ ht_change_government = {
 		allow_self = yes
 		looking_for_a = country
 		target_flag = target
-		name = ht_select_target_country
+		name = ht_select_source_country
 
 
 		show_if = {
@@ -784,8 +784,8 @@ ht_change_government = {
 			}
 			if = {
 				limit = {
-					exists = scope:recipient
-					exists = scope:target
+					country_exists = scope:recipient
+					country_exists = scope:target
 				}
 				ht_change_government_effect = yes
 			}
@@ -814,7 +814,7 @@ ht_convert_pops = {
 		allow_self = yes
 		looking_for_a = country
 		target_flag = recipient
-		name = ht_select_target
+		name = ht_select_recipient_country
 
 
 		show_if = {
@@ -857,7 +857,7 @@ ht_convert_pops = {
 				scope:actor = { save_scope_as = recipient }
 			}
 			if = {
-				limit = { exists = scope:recipient }
+				limit = { country_exists = scope:recipient }
 				ht_convert_pops_effect = yes
 			}
 		}
@@ -883,7 +883,7 @@ ht_assimilate_pops = {
 		allow_self = yes
 		looking_for_a = country
 		target_flag = recipient
-		name = ht_select_target
+		name = ht_select_recipient_country
 
 
 		show_if = {
@@ -926,7 +926,7 @@ ht_assimilate_pops = {
 				scope:actor = { save_scope_as = recipient }
 			}
 			if = {
-				limit = { exists = scope:recipient }
+				limit = { country_exists = scope:recipient }
 				ht_assimilate_pops_effect = yes
 			}
 		}
@@ -1014,7 +1014,7 @@ ht_give_land = {
 
 	select_trigger = {
 		looking_for_a = location
-		target_flag = ht_target_location
+		target_flag = target_location
 		source_flags = only_actual_locations
 		name = ht_select_location_to_give
 		none_available_msg_key = ht_no_valid_locations
@@ -1053,7 +1053,7 @@ ht_give_land = {
 
 	select_trigger = {
 		looking_for_a = province
-		target_flag = ht_target_province
+		target_flag = target_province
 		name = ht_select_province_to_give
 		none_available_msg_key = ht_no_valid_provinces
 
@@ -1091,7 +1091,7 @@ ht_give_land = {
 
 	select_trigger = {
 		looking_for_a = area
-		target_flag = ht_target_area
+		target_flag = target_area
 		name = ht_select_area_to_give
 		none_available_msg_key = ht_no_valid_areas
 
@@ -1135,7 +1135,7 @@ ht_give_land = {
 			}
 			if = {
 				limit = {
-					exists = scope:recipient
+					country_exists = scope:recipient
 				}
 				scope:actor = {
 					set_variable = {

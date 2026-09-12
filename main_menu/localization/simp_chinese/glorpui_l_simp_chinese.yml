@@ -21,3 +21,8 @@ l_simp_chinese:
  REFRESH_AVG_PROX: "刷新平均距离"
  MAPMODE_BUILDING_LEVELS: "根据已使用的 [supported_building_levels|e] 的百分比，为 [locations|e] 着色。"
  mapmode_building_levels_name: "楼层"
+ season_spring: "@spring!"
+ season_summer: "@summer!"
+ season_autumn: "@autumn!"
+ season_winter: "@winter!"
+ GLORP_UI_CURRENT_SEASON: "[Player.Custom('glorpui_get_current_season')]"

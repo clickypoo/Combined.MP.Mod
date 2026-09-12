@@ -32,3 +32,8 @@
  ht_log_changed_government: "hükümeti şuraya kopyaladı:"
  ht_log_converted_pops: "[CMMV('ht__religion_conversion_percentage')]%'lik bir nüfus,"
  ht_log_assimilated_pops: "[CMMV('ht__culture_assimilation_percentage')]%'si asimile olmuş"
+ ht_log_added_casus_belli: "[CMMV('ht__casus_belli_discount')|+0V]% indirim elde etti casus belli karşısında"
+ ht_log_called_parliament: "... için bir parlamento olarak adlandırılan"
+ ht_log_gave_location: "...'ya bir konum verdi"
+ ht_log_gave_province: "şu kişiye bir eyalet verdi"
+ ht_log_gave_area: "bir alanı tahsis etti"

@@ -17,7 +17,7 @@
 		allow_self = yes
 		looking_for_a = country
 		target_flag = recipient
-		name = ht_select_target
+		name = ht_select_recipient_country
 
 
 		show_if = {
@@ -60,7 +60,7 @@
 				scope:actor = { save_scope_as = recipient }
 			}
 			if = {
-				limit = { exists = scope:recipient }
+				limit = { country_exists = scope:recipient }
 				ht_add_gold_effect = yes
 			}
 		}
@@ -86,7 +86,7 @@ ht_add_manpower = {
 		allow_self = yes
 		looking_for_a = country
 		target_flag = recipient
-		name = ht_select_target
+		name = ht_select_recipient_country
 
 
 		show_if = {
@@ -129,7 +129,7 @@ ht_add_manpower = {
 				scope:actor = { save_scope_as = recipient }
 			}
 			if = {
-				limit = { exists = scope:recipient }
+				limit = { country_exists = scope:recipient }
 				ht_add_manpower_effect = yes
 			}
 		}
@@ -155,7 +155,7 @@ ht_add_stability = {
 		allow_self = yes
 		looking_for_a = country
 		target_flag = recipient
-		name = ht_select_target
+		name = ht_select_recipient_country
 
 
 		show_if = {
@@ -198,7 +198,7 @@ ht_add_stability = {
 				scope:actor = { save_scope_as = recipient }
 			}
 			if = {
-				limit = { exists = scope:recipient }
+				limit = { country_exists = scope:recipient }
 				ht_add_stability_effect = yes
 			}
 		}
@@ -224,7 +224,7 @@ ht_add_prestige = {
 		allow_self = yes
 		looking_for_a = country
 		target_flag = recipient
-		name = ht_select_target
+		name = ht_select_recipient_country
 
 
 		show_if = {
@@ -267,7 +267,7 @@ ht_add_prestige = {
 				scope:actor = { save_scope_as = recipient }
 			}
 			if = {
-				limit = { exists = scope:recipient }
+				limit = { country_exists = scope:recipient }
 				ht_add_prestige_effect = yes
 			}
 		}
@@ -293,7 +293,7 @@ ht_add_diplomats = {
 		allow_self = yes
 		looking_for_a = country
 		target_flag = recipient
-		name = ht_select_target
+		name = ht_select_recipient_country
 
 
 		show_if = {
@@ -336,7 +336,7 @@ ht_add_diplomats = {
 				scope:actor = { save_scope_as = recipient }
 			}
 			if = {
-				limit = { exists = scope:recipient }
+				limit = { country_exists = scope:recipient }
 				ht_add_diplomats_effect = yes
 			}
 		}

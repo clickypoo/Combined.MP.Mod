@@ -21,3 +21,8 @@ l_korean:
  REFRESH_AVG_PROX: "평균 근접도 새로 고침"
  MAPMODE_BUILDING_LEVELS: "사용된 [supported_building_levels|e]의 비율에 따라 [locations|e]에 색상을 입힙니다."
  mapmode_building_levels_name: "건물 층수"
+ season_spring: "@spring!"
+ season_summer: "@summer!"
+ season_autumn: "@autumn!"
+ season_winter: "@winter!"
+ GLORP_UI_CURRENT_SEASON: "[Player.Custom('glorpui_get_current_season')]"

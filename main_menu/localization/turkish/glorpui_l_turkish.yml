@@ -21,3 +21,8 @@ l_turkish:
  REFRESH_AVG_PROX: "Ortalama Yakınlık Değerini Yenile"
  MAPMODE_BUILDING_LEVELS: "[locations|e] öğelerini, kullanılan [supported_building_levels|e] öğelerinin yüzdesine göre renklendirir."
  mapmode_building_levels_name: "Bina Katları"
+ season_spring: "@spring!"
+ season_summer: "@summer!"
+ season_autumn: "@autumn!"
+ season_winter: "@winter!"
+ GLORP_UI_CURRENT_SEASON: "[Player.Custom('glorpui_get_current_season')]"

@@ -21,3 +21,8 @@ l_russian:
  REFRESH_AVG_PROX: "Обновить Средняя расстояние" # LOCK
  MAPMODE_BUILDING_LEVELS: "Окрашивает [locations|e] в зависимости от процента использованных [supported_building_levels|e]."
  mapmode_building_levels_name: "Уровни здания"
+ season_spring: "@spring!"
+ season_summer: "@summer!"
+ season_autumn: "@autumn!"
+ season_winter: "@winter!"
+ GLORP_UI_CURRENT_SEASON: "[Player.Custom('glorpui_get_current_season')]"

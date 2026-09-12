@@ -32,3 +32,8 @@
  ht_log_changed_government: "copió el gobierno a"
  ht_log_converted_pops: "un [CMMV('ht__religion_conversion_percentage')] % de la población en"
  ht_log_assimilated_pops: "% asimilado [CMMV('ht__culture_assimilation_percentage')] de la población en"
+ ht_log_added_casus_belli: "ha obtenido un descuento del [CMMV('ht__casus_belli_discount')|+0V] % en el casus belli frente a"
+ ht_log_called_parliament: "convocó un parlamento para"
+ ht_log_gave_location: "indicó una ubicación a"
+ ht_log_gave_province: "concedió una provincia a"
+ ht_log_gave_area: "cedió una zona a"

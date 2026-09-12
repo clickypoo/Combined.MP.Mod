@@ -48,3 +48,7 @@
  ht__religion_conversion_percentage: "ht__religion_conversion_percentage"
  ht__culture_assimilation_percentage: "ht__culture_assimilation_percentage"
  ht__war_exhaustion_amount: "ht__war_exhaustion_amount"
+ ht__casus_belli_discount_name: "Zniżka „Casus Belli”"
+ ht__casus_belli_discount_desc: "O ile tańsze staje się zawarcie pokoju dzięki casus belli uzyskanym w ramach akcji „Dodaj casus belli”. Przejęcie terytoriów i poddanych kosztuje o tyle mniej punktów wojennych. Wartości ujemne oznaczają natomiast, że koszt ten jest wyższy."
+ ht__casus_belli_discount_format: "[CMMV('ht__casus_belli_discount')]%"
+ ht__casus_belli_discount: "ht__casus_belli_discount"
