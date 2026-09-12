@@ -1,0 +1,121 @@
+﻿primary_culture_minimum = {
+	trigger_if = {
+		limit = {
+			has_game_rule = culture_present_in_country
+		}
+		$country$ = {
+			culture_population_in_country = {
+				culture = $culture$
+				value > 0
+			}
+		}
+	}
+	trigger_else_if = {
+		limit = { has_game_rule = culture_10_percent }
+		$country$ = { culture_percentage_in_country = { culture = $culture$ value > 0.1 } }
+	}
+	trigger_else_if = {
+		limit = { has_game_rule = culture_20_percent }
+		$country$ = { culture_percentage_in_country = { culture = $culture$ value > 0.2 } }
+	}
+	trigger_else_if = {
+		limit = { has_game_rule = culture_25_percent }
+		$country$ = { culture_percentage_in_country = { culture = $culture$ value > 0.25 } }
+	}
+	trigger_else_if = {
+		limit = { has_game_rule = culture_30_percent }
+		$country$ = { culture_percentage_in_country = { culture = $culture$ value > 0.3 } }
+	}
+	trigger_else_if = {
+		limit = { has_game_rule = culture_40_percent }
+		$country$ = { culture_percentage_in_country = { culture = $culture$ value > 0.4 } }
+	}
+	trigger_else_if = {
+		limit = { has_game_rule = culture_50_percent }
+		$country$ = { culture_percentage_in_country = { culture = $culture$ value > 0.5 } }
+	}
+	trigger_else_if = {
+		limit = { has_game_rule = culture_60_percent }
+		$country$ = { culture_percentage_in_country = { culture = $culture$ value > 0.6 } }
+	}
+	trigger_else_if = {
+		limit = { has_game_rule = culture_70_percent }
+		$country$ = { culture_percentage_in_country = { culture = $culture$ value > 0.7 } }
+	}
+	trigger_else_if = {
+		limit = { has_game_rule = culture_75_percent }
+		$country$ = { culture_percentage_in_country = { culture = $culture$ value > 0.75 } }
+	}
+	trigger_else_if = {
+		limit = { has_game_rule = culture_80_percent }
+		$country$ = { culture_percentage_in_country = { culture = $culture$ value > 0.8 } }
+	}
+	trigger_else_if = {
+		limit = { has_game_rule = culture_90_percent }
+		$country$ = { culture_percentage_in_country = { culture = $culture$ value > 0.9 } }
+	}
+	trigger_else = {
+		always = yes
+	}
+}
+
+convert_religion_minimum = {
+	trigger_if = {
+		limit = {
+			has_game_rule = religion_present_in_country
+		}
+		$country$ = {
+			religion_population_in_country = {
+				religion = $religion$
+				value > 0
+			}
+		}
+	}
+	trigger_else_if = {
+		limit = { has_game_rule = religion_10_percent }
+		$country$ = { religion_percentage_in_country = { religion = $religion$ value > 0.1 } }
+	}
+	trigger_else_if = {
+		limit = { has_game_rule = religion_20_percent }
+		$country$ = { religion_percentage_in_country = { religion = $religion$ value > 0.2 } }
+	}
+	trigger_else_if = {
+		limit = { has_game_rule = religion_25_percent }
+		$country$ = { religion_percentage_in_country = { religion = $religion$ value > 0.25 } }
+	}
+	trigger_else_if = {
+		limit = { has_game_rule = religion_30_percent }
+		$country$ = { religion_percentage_in_country = { religion = $religion$ value > 0.3 } }
+	}
+	trigger_else_if = {
+		limit = { has_game_rule = religion_40_percent }
+		$country$ = { religion_percentage_in_country = { religion = $religion$ value > 0.4 } }
+	}
+	trigger_else_if = {
+		limit = { has_game_rule = religion_50_percent }
+		$country$ = { religion_percentage_in_country = { religion = $religion$ value > 0.5 } }
+	}
+	trigger_else_if = {
+		limit = { has_game_rule = religion_60_percent }
+		$country$ = { religion_percentage_in_country = { religion = $religion$ value > 0.6 } }
+	}
+	trigger_else_if = {
+		limit = { has_game_rule = religion_70_percent }
+		$country$ = { religion_percentage_in_country = { religion = $religion$ value > 0.7 } }
+	}
+	trigger_else_if = {
+		limit = { has_game_rule = religion_75_percent }
+		$country$ = { religion_percentage_in_country = { religion = $religion$ value > 0.75 } }
+	}
+	trigger_else_if = {
+		limit = { has_game_rule = religion_80_percent }
+		$country$ = { religion_percentage_in_country = { religion = $religion$ value > 0.8 } }
+	}
+	trigger_else_if = {
+		limit = { has_game_rule = religion_90_percent }
+		$country$ = { religion_percentage_in_country = { religion = $religion$ value > 0.9 } }
+	}
+	trigger_else = {
+		always = yes
+	}
+}

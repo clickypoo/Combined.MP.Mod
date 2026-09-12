@@ -1,0 +1,63 @@
+﻿REPLACE:culture_conversions_rule = {
+	default = dynamic_culture
+	dynamic_culture = {
+		flag = flavour_rule
+	}
+	culture_group_only = {
+		flag = flavour_rule
+	}
+	any_culture = {
+		flag = blocks_achievements
+		flag = flavour_rule
+	}
+}
+
+culture_conversions_minimum = {
+	default = culture_present_in_country
+	culture_present_in_country = {
+		flag = flavour_rule
+	}
+	culture_10_percent = { flag = flavour_rule }
+	culture_20_percent = { flag = flavour_rule }
+	culture_25_percent = { flag = flavour_rule }
+	culture_30_percent = { flag = flavour_rule }
+	culture_40_percent = { flag = flavour_rule }
+	culture_50_percent = { flag = flavour_rule }
+	culture_60_percent = { flag = flavour_rule }
+	culture_70_percent = { flag = flavour_rule }
+	culture_75_percent = { flag = flavour_rule }
+	culture_80_percent = { flag = flavour_rule }
+	culture_90_percent = { flag = flavour_rule }
+}
+
+REPLACE:religion_conversions_rule = {
+	default = dynamic_religion
+	dynamic_religion = {
+		flag = flavour_rule
+	}
+	religion_group_only = {
+		flag = flavour_rule
+	}
+	any_religion = {
+		flag = blocks_achievements
+		flag = flavour_rule
+	}
+}
+
+religion_conversions_minimum = {
+	default = religion_present_in_country
+	religion_present_in_country = {
+		flag = flavour_rule
+	}
+	religion_10_percent = { flag = flavour_rule }
+	religion_20_percent = { flag = flavour_rule }
+	religion_25_percent = { flag = flavour_rule }
+	religion_30_percent = { flag = flavour_rule }
+	religion_40_percent = { flag = flavour_rule }
+	religion_50_percent = { flag = flavour_rule }
+	religion_60_percent = { flag = flavour_rule }
+	religion_70_percent = { flag = flavour_rule }
+	religion_75_percent = { flag = flavour_rule }
+	religion_80_percent = { flag = flavour_rule }
+	religion_90_percent = { flag = flavour_rule }
+}

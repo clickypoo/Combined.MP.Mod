@@ -3059,8 +3059,10 @@ lateralview = {
 
 											using = bg_circle_piechart
 										}
-										widget = { # GlorpUI: vanilla position removed, not allowed inside this hbox
+										widget = {
 											size = {30 23}
+
+											position = {0 8}
 
 											country_flag_small = {
 												parentanchor = center

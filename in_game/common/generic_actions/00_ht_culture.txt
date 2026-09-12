@@ -1,0 +1,173 @@
+﻿REPLACE:change_primary_culture = {
+	type = owncountr
+	potential = { }
+
+	allow = {
+		scope:actor = { is_colonial_subject = no }
+	}
+
+	ai_tick = monthly
+	ai_tick_frequency = 12
+
+	automation_tick = monthly
+	automation_tick_frequency = 1
+	player_automated_category = cultureacceptance
+
+	price = price:change_primary_culture
+
+	cooldown = {
+		type = convert_culture
+		years = 10
+	}
+
+	select_trigger = {
+		looking_for_a = culture
+		source = actor
+		target_flag = target
+		name = "change_culture_select_culture"
+		none_available_msg_key = "change_primary_culture_no_cultures"
+
+		ai_interaction_source_list = {
+			scope:actor = {
+				if = {
+					limit = { exists = dominant_culture }
+					dominant_culture = {
+						add_to_list = source
+					}
+				}
+				else = {
+					culture = {
+						add_to_list = source
+					}
+				}
+			}
+		}
+
+		column = { data = name }
+		visible = {
+			trigger_if = {
+				limit = {
+					has_game_rule = dynamic_culture
+				}
+				always = yes
+			}
+			trigger_else_if = {
+				limit = {
+					has_game_rule = culture_group_only
+				}
+				scope:actor = {
+					culture = {
+						any_culture_group = {
+							root = {
+								has_culture_group = prev
+							}
+						}
+					}
+				}
+			}
+			trigger_else = {
+				always = yes
+			}
+		}
+		enabled = {
+			trigger_if = {
+				limit = {
+					has_game_rule = dynamic_culture
+				}
+				scope:actor = {
+					has_accepted_culture = root
+					not = { culture = root }
+					OR = {
+						dominant_culture ?= root
+						ruler ?= { culture = root }
+						dominant_upper_class_culture ?= root
+					}
+				}
+			}
+			AND = {
+				primary_culture_minimum = {
+					country = scope:actor
+					culture = root
+				}
+				can_change_primary_culture = {
+					country = scope:actor
+					culture = root
+				}
+			}
+		}
+	}
+
+	effect = {
+		scope:actor = {
+			if = {
+				limit = {
+					exists = scope:target
+				}
+				culture = {
+					save_scope_as = old_culture
+				}
+				change_culture = scope:target
+				add_accepted_culture = scope:old_culture
+			}
+		}
+	}
+
+	ai_will_do = {
+		if = {
+			limit = {
+				scope:actor = {
+					at_war = yes
+				}
+			}
+			multiply = 0
+		}
+
+		# change our primiary culture if it is 10% bigger than our current one and we are at peace
+		if = {
+			limit = {
+				scope:actor = {
+					"culture_percentage_in_country(scope:target)" > { value = "culture_percentage_in_country(scope:actor.culture)" add = 0.1 }
+				}
+			}
+			add = 1000
+		}
+
+		subtract = {
+			desc = "less accepted pops"
+			scope:actor = {
+				value = 100
+				multiply = "culture_percentage_in_country(scope:target)"
+			}
+		}
+
+
+		if = {
+			limit = {
+				scope:actor = {
+					ruler ?= { culture = scope:actor.culture }
+				}
+			}
+			multiply = 0
+		}
+
+		if = {
+			limit = {
+				has_game_rule = historical_ai_choices
+				scope:actor = {
+					has_or_had_tag = TUR
+				}
+			}
+
+			add = {
+				desc = "historical ottomans"
+				value = -10000
+			}
+		}
+
+		add = {
+			desc = "inertia"
+			value = -1
+		}
+
+	}
+}
