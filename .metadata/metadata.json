@@ -1,7 +1,7 @@
 ﻿{
   "name" : "Lambert MP Minimal Dev",
   "id" : "Lambert.MP.Minimal.dev",
-  "version" : "12.09.26",
+  "version" : "03.10.26",
   "game_id" : "eu5",
   "picture" : null,
   "supported_game_version" : "1.3.*",
